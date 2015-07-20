@@ -16,8 +16,8 @@ ALGraph<int> *al_graph;                         //算法AOE图,没有定义除析构以外的
 
 
 public:
-al_base(size_t r, size_t w, size_t v_num, size_t e_num);
-void max_delay_element(al_protocol::element &, int &){}
+	al_base(size_t r, size_t w, size_t v_num, vector<al_protocol::element>);
+void max_delay_element(al_protocol::element &);
 void init_graph(void(*ptr)(ALGraph<int> &, std::string), std::string);
 virtual void get_element_group(std::vector<std::vector<al_protocol::element>>&){}
 virtual void key_path(std::vector<al_protocol::element> &, int &);
