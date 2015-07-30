@@ -534,7 +534,7 @@ void SaveCriticalPath( ALGraph<VertexType>& g, std::vector<int> &save, int &tota
     edgeNode* edge;
     int *ve;
     int *vl;
-	int maxvl = 0, maxv, x;
+	int maxvl = 0, maxv=0, x=0;
     int *pArr = new int[g.GetNumVertices()];
     if ( !TopologicalSort(g, pArr)){
         std::cout << "Graph has a circle!" << endl;

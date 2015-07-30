@@ -124,6 +124,182 @@ int main(){
 	al_protocol::element camellia_maxe;
 	camellia.max_delay_element(camellia_maxe);
 	out<<"the max_delay_element is :"<<camellia_maxe/100.0<<"ns"<<endl;		
+
+//**************CAST128******************
+	out << endl << "*************CAST128*************" << endl;
+    vector<al_protocol::element> ie_cast128 = {al_protocol::BL, al_protocol::SH,
+	                                           al_protocol::LUT, al_protocol::MAS};
+	al_base cast128(16,32,14,ie_cast128);
+	cast128.init_graph(init_al_graph,"CAST128");
+	std::vector<al_protocol::element> cast128_r;
+	int cast128_delay;
+	cast128.key_path(cast128_r,cast128_delay);
+	out<<"the critical path of cast128 is:"<<endl;
+	for(al_protocol::element i:cast128_r){
+		print_element(i);
+		out<<" -> "<<endl;		
+	}
+	out<<"the total delay of a round is :"<<cast128_delay/100.0<<"ns"<<endl;	
+	al_protocol::element cast128_maxe;
+	cast128.max_delay_element(cast128_maxe);
+	out<<"the max_delay_element is :"<<cast128_maxe/100.0<<"ns"<<endl;		
+
+	
+//**************GOST******************
+	out << endl << "*************GOST*************" << endl;
+    vector<al_protocol::element> ie_gost = {al_protocol::BL, al_protocol::SH,
+	                                           al_protocol::LUT, al_protocol::MAS};
+	al_base gost(32,32,5,ie_gost);
+	gost.init_graph(init_al_graph,"GOST");
+	std::vector<al_protocol::element> gost_r;
+	int gost_delay;
+	gost.key_path(gost_r,gost_delay);
+	out<<"the critical path of gost is:"<<endl;
+	for(al_protocol::element i:gost_r){
+		print_element(i);
+		out<<" -> "<<endl;		
+	}
+	out<<"the total delay of a round is :"<<gost_delay/100.0<<"ns"<<endl;	
+	al_protocol::element gost_maxe;
+	gost.max_delay_element(gost_maxe);
+	out<<"the max_delay_element is :"<<gost_maxe/100.0<<"ns"<<endl;	
+	
+/*	
+//**************KASUMI******************
+	out << endl << "*************KASUMI*************" << endl;
+    vector<al_protocol::element> ie_kasumi = {al_protocol::BL, al_protocol::SH,
+	                                           al_protocol::LUT, al_protocol::MAS};
+	al_base kasumi(32,32,5,ie_kasumi);
+	kasumi.init_graph(init_al_graph,"KASUMI");
+	std::vector<al_protocol::element> kasumi_r;
+	int kasumi_delay;
+	kasumi.key_path(kasumi_r,kasumi_delay);
+	out<<"the critical path of kasumi is:"<<endl;
+	for(al_protocol::element i:kasumi_r){
+		print_element(i);
+		out<<" -> "<<endl;		
+	}
+	out<<"the total delay of a round is :"<<kasumi_delay/100.0<<"ns"<<endl;	
+	al_protocol::element kasumi_maxe;
+	kasumi.max_delay_element(kasumi_maxe);
+	out<<"the max_delay_element is :"<<kasumi_maxe/100.0<<"ns"<<endl;		
+*/
+
+
+//**************RC5******************
+	out << endl << "*************RC5*************" << endl;
+    vector<al_protocol::element> ie_rc5 = {al_protocol::BL, al_protocol::SH,
+	                                       al_protocol::MAS};
+	al_base rc5(24,32,4,ie_rc5);
+	rc5.init_graph(init_al_graph,"RC5");
+	std::vector<al_protocol::element> rc5_r;
+	int rc5_delay;
+	rc5.key_path(rc5_r,rc5_delay);
+	out<<"the critical path of rc5 is:"<<endl;
+	for(al_protocol::element i:rc5_r){
+		print_element(i);
+		out<<" -> "<<endl;		
+	}
+	out<<"the total delay of a round is :"<<rc5_delay/100.0<<"ns"<<endl;	
+	al_protocol::element rc5_maxe;
+	rc5.max_delay_element(rc5_maxe);
+	out<<"the max_delay_element is :"<<rc5_maxe/100.0<<"ns"<<endl;	
+
+//**************SEED******************
+	out << endl << "*************SEED*************" << endl;
+    vector<al_protocol::element> ie_seed = {al_protocol::BL, al_protocol::LUT,
+	                                       al_protocol::MAS};
+	al_base seed(16,32,24,ie_seed);
+	seed.init_graph(init_al_graph,"SEED");
+	std::vector<al_protocol::element> seed_r;
+	int seed_delay;
+	seed.key_path(seed_r,seed_delay);
+	out<<"the critical path of seed is:"<<endl;
+	for(al_protocol::element i:seed_r){
+		print_element(i);
+		out<<" -> "<<endl;		
+	}
+	out<<"the total delay of a round is :"<<seed_delay/100.0<<"ns"<<endl;	
+	al_protocol::element seed_maxe;
+	seed.max_delay_element(seed_maxe);
+	out<<"the max_delay_element is :"<<seed_maxe/100.0<<"ns"<<endl;		
+	
+//**************TWOFISH******************
+	out << endl << "*************TWOFISH*************" << endl;
+    vector<al_protocol::element> ie_twofish = {al_protocol::BL, al_protocol::LUT,
+	                                           al_protocol::GFM, al_protocol::MAS,
+											   al_protocol::SH};
+	al_base twofish(16,32,20,ie_twofish);
+	twofish.init_graph(init_al_graph,"TWOFISH");
+	std::vector<al_protocol::element> twofish_r;
+	int twofish_delay;
+	twofish.key_path(twofish_r,twofish_delay);
+	out<<"the critical path of twofish is:"<<endl;
+	for(al_protocol::element i:twofish_r){
+		print_element(i);
+		out<<" -> "<<endl;		
+	}
+	out<<"the total delay of a round is :"<<twofish_delay/100.0<<"ns"<<endl;	
+	al_protocol::element twofish_maxe;
+	twofish.max_delay_element(twofish_maxe);
+	out<<"the max_delay_element is :"<<twofish_maxe/100.0<<"ns"<<endl;		
+	
+//**************SM4******************
+	out << endl << "*************SM4*************" << endl;
+    vector<al_protocol::element> ie_sm4 = {al_protocol::BL, al_protocol::LUT,
+											   al_protocol::SH};
+	al_base sm4(32,32,9,ie_sm4);
+	sm4.init_graph(init_al_graph,"SM4");
+	std::vector<al_protocol::element> sm4_r;
+	int sm4_delay;
+	sm4.key_path(sm4_r,sm4_delay);
+	out<<"the critical path of sm4 is:"<<endl;
+	for(al_protocol::element i:sm4_r){
+		print_element(i);
+		out<<" -> "<<endl;		
+	}
+	out<<"the total delay of a round is :"<<sm4_delay/100.0<<"ns"<<endl;	
+	al_protocol::element sm4_maxe;
+	sm4.max_delay_element(sm4_maxe);
+	out<<"the max_delay_element is :"<<sm4_maxe/100.0<<"ns"<<endl;		
+	
+//**************RC6******************
+	out << endl << "*************RC6*************" << endl;
+    vector<al_protocol::element> ie_rc6 = {al_protocol::MAS, al_protocol::LUT,
+											   al_protocol::SH, al_protocol::BL};
+	al_base rc6(20,32,15,ie_rc6);
+	rc6.init_graph(init_al_graph,"RC6");
+	std::vector<al_protocol::element> rc6_r;
+	int rc6_delay;
+	rc6.key_path(rc6_r,rc6_delay);
+	out<<"the critical path of rc6 is:"<<endl;
+	for(al_protocol::element i:rc6_r){
+		print_element(i);
+		out<<" -> "<<endl;		
+	}
+	out<<"the total delay of a round is :"<<rc6_delay/100.0<<"ns"<<endl;	
+	al_protocol::element rc6_maxe;
+	rc6.max_delay_element(rc6_maxe);
+	out<<"the max_delay_element is :"<<rc6_maxe/100.0<<"ns"<<endl;		
+	
+//**************SERPENT******************
+	out << endl << "*************SERPENT*************" << endl;
+    vector<al_protocol::element> ie_serpent = {al_protocol::SH, al_protocol::BL, al_protocol::MAS, al_protocol::LUT};
+	al_base serpent(32,32,19,ie_serpent);
+	serpent.init_graph(init_al_graph,"SERPENT");
+	std::vector<al_protocol::element> serpent_r;
+	int serpent_delay;
+	serpent.key_path(serpent_r,serpent_delay);
+	out<<"the critical path of serpent is:"<<endl;
+	for(al_protocol::element i:serpent_r){
+		print_element(i);
+		out<<" -> "<<endl;		
+	}
+	out<<"the total delay of a round is :"<<serpent_delay/100.0<<"ns"<<endl;	
+	al_protocol::element serpent_maxe;
+	serpent.max_delay_element(serpent_maxe);
+	out<<"the max_delay_element is :"<<serpent_maxe/100.0<<"ns"<<endl;	
+
 	
 	return 0;
 	
