@@ -3,12 +3,24 @@
 #include "al_base.h"
 #include <iostream>
 #include <fstream>
+#include <set>
+#include <map>
+#include <deque>
+#include <vector>
+
+#define NOT_INCLUDE_SINGLE  1
+
 
 using std::cout;
 using std::endl;
-
+using std::vector;
+using std::deque;
+using std::string;
+using std::set;
 
 std::ofstream out("output.txt");
+std::map<string, set<int>> mix = std::map<string, set<int>>();
+vector<deque<al_protocol::element>> key_path = vector<deque<al_protocol::element>>();
 
 
 void print_element(int i){
@@ -20,9 +32,66 @@ void print_element(int i){
 	case 462:    out<<"Modular Multiplication"; break;
 	case 422:    out<<"GF Multiplication"; break;
 	case 60:     out<<"substitution"; break;
-	default:     out<<"error elememt,the delay is:"<<i<<endl; break;
+	default:     out<<"error element,the delay is:"<<i<<endl; break;
 	}
 }
+string element_to_string (al_protocol::element i){
+	switch(i){
+	case al_protocol::BL:     return "BL";
+	case al_protocol::LUT:    return "LUT"; 
+	case al_protocol::MAS:    return "MAS"; 
+	case al_protocol::SH:     return "SH"; 
+	case al_protocol::MM:     return "MM"; 
+	case al_protocol::GFM:    return "GFM";
+	case al_protocol::SUB:    return "SUB"; 
+	default:     out<<"error element,the delay is:"<<i<<endl; return string();
+	}
+}
+
+
+void mix_temp(std::map<string, set<int>> &mix,deque<al_protocol::element> &de, int delay, int al){
+	int i = de.size();
+	string s = string();
+	int c_delay = 0;
+	while(i-- >0){
+		for(size_t j=0;j<de.size();j++){
+			c_delay += int(de[j]);
+			if(c_delay <= delay){
+				s = s + element_to_string(de[j]) + " ";
+				mix[s + "| the delay is: " + std::to_string(c_delay)].insert(al);
+			}
+			else
+				break;
+		}
+		s.clear();
+		c_delay = 0;
+		de.push_back(*(de.begin()));
+		de.pop_front();
+	}
+}
+
+void do_mix(std::map<string, set<int>> &mix, vector<deque<al_protocol::element>> &key_path, int delay){
+	for(unsigned i = 0; i<key_path.size(); i++){
+		mix_temp(mix,key_path[i], delay, i+1);
+	}
+}
+
+void print_mix(std::map<string, set<int>> &mix){
+	for (std::map<string, set<int>>::iterator i = mix.begin(); i != mix.end(); i++){
+#if NOT_INCLUDE_SINGLE
+	    if(i->second.size()==1) continue;
+#endif
+		out << "组合类型: " << i->first << endl;
+		out << "算法个数: " << i->second.size() << " 分别是：" << endl;
+		for (int j : i->second)
+			out << j << " ";
+		out << endl;	
+
+	}
+}
+
+
+
 
 int main(){
 
@@ -37,6 +106,8 @@ int main(){
 	std::vector<al_protocol::element> aes_r;
 	int aes_delay;
 	aes.key_path(aes_r,aes_delay);
+	key_path.push_back(deque<al_protocol::element>(aes_r.begin(),aes_r.end()));	
+	
 	out<<"the critical path of aes is:"<<endl;
 	for(al_protocol::element i:aes_r){
 		print_element(i);
@@ -57,6 +128,7 @@ int main(){
 	std::vector<al_protocol::element> des_r;
 	int des_delay;
 	des.key_path(des_r,des_delay);
+	key_path.push_back(deque<al_protocol::element>(des_r.begin(),des_r.end()));	
 	out<<"the critical path of des is:"<<endl;
 	for(al_protocol::element i:des_r){
 		print_element(i);
@@ -76,6 +148,7 @@ int main(){
 	std::vector<al_protocol::element> idea_r;
 	int idea_delay;
 	idea.key_path(idea_r,idea_delay);
+	key_path.push_back(deque<al_protocol::element>(idea_r.begin(),idea_r.end()));	
 	out<<"the critical path of idea is:"<<endl;
 	for(al_protocol::element i:idea_r){
 		print_element(i);
@@ -95,6 +168,7 @@ int main(){
 	std::vector<al_protocol::element> blowfish_r;
 	int blowfish_delay;
 	blowfish.key_path(blowfish_r,blowfish_delay);
+	key_path.push_back(deque<al_protocol::element>(blowfish_r.begin(),blowfish_r.end()));	
 	out<<"the critical path of blowfish is:"<<endl;
 	for(al_protocol::element i:blowfish_r){
 		print_element(i);
@@ -115,6 +189,7 @@ int main(){
 	std::vector<al_protocol::element> camellia_r;
 	int camellia_delay;
 	camellia.key_path(camellia_r,camellia_delay);
+	key_path.push_back(deque<al_protocol::element>(camellia_r.begin(),camellia_r.end()));	
 	out<<"the critical path of camellia is:"<<endl;
 	for(al_protocol::element i:camellia_r){
 		print_element(i);
@@ -134,6 +209,7 @@ int main(){
 	std::vector<al_protocol::element> cast128_r;
 	int cast128_delay;
 	cast128.key_path(cast128_r,cast128_delay);
+	key_path.push_back(deque<al_protocol::element>(cast128_r.begin(),cast128_r.end()));	
 	out<<"the critical path of cast128 is:"<<endl;
 	for(al_protocol::element i:cast128_r){
 		print_element(i);
@@ -154,6 +230,7 @@ int main(){
 	std::vector<al_protocol::element> gost_r;
 	int gost_delay;
 	gost.key_path(gost_r,gost_delay);
+	key_path.push_back(deque<al_protocol::element>(gost_r.begin(),gost_r.end()));	
 	out<<"the critical path of gost is:"<<endl;
 	for(al_protocol::element i:gost_r){
 		print_element(i);
@@ -195,6 +272,7 @@ int main(){
 	std::vector<al_protocol::element> rc5_r;
 	int rc5_delay;
 	rc5.key_path(rc5_r,rc5_delay);
+	key_path.push_back(deque<al_protocol::element>(rc5_r.begin(),rc5_r.end()));
 	out<<"the critical path of rc5 is:"<<endl;
 	for(al_protocol::element i:rc5_r){
 		print_element(i);
@@ -214,6 +292,7 @@ int main(){
 	std::vector<al_protocol::element> seed_r;
 	int seed_delay;
 	seed.key_path(seed_r,seed_delay);
+	key_path.push_back(deque<al_protocol::element>(seed_r.begin(),seed_r.end()));
 	out<<"the critical path of seed is:"<<endl;
 	for(al_protocol::element i:seed_r){
 		print_element(i);
@@ -234,6 +313,7 @@ int main(){
 	std::vector<al_protocol::element> twofish_r;
 	int twofish_delay;
 	twofish.key_path(twofish_r,twofish_delay);
+	key_path.push_back(deque<al_protocol::element>(twofish_r.begin(),twofish_r.end()));
 	out<<"the critical path of twofish is:"<<endl;
 	for(al_protocol::element i:twofish_r){
 		print_element(i);
@@ -253,6 +333,7 @@ int main(){
 	std::vector<al_protocol::element> sm4_r;
 	int sm4_delay;
 	sm4.key_path(sm4_r,sm4_delay);
+	key_path.push_back(deque<al_protocol::element>(sm4_r.begin(),sm4_r.end()));
 	out<<"the critical path of sm4 is:"<<endl;
 	for(al_protocol::element i:sm4_r){
 		print_element(i);
@@ -272,6 +353,7 @@ int main(){
 	std::vector<al_protocol::element> rc6_r;
 	int rc6_delay;
 	rc6.key_path(rc6_r,rc6_delay);
+	key_path.push_back(deque<al_protocol::element>(rc6_r.begin(),rc6_r.end()));
 	out<<"the critical path of rc6 is:"<<endl;
 	for(al_protocol::element i:rc6_r){
 		print_element(i);
@@ -290,6 +372,7 @@ int main(){
 	std::vector<al_protocol::element> serpent_r;
 	int serpent_delay;
 	serpent.key_path(serpent_r,serpent_delay);
+	key_path.push_back(deque<al_protocol::element>(serpent_r.begin(),serpent_r.end()));
 	out<<"the critical path of serpent is:"<<endl;
 	for(al_protocol::element i:serpent_r){
 		print_element(i);
@@ -301,7 +384,16 @@ int main(){
 	out<<"the max_delay_element is :"<<serpent_maxe/100.0<<"ns"<<endl;	
 
 	
+	
+//***************print mix************
+    do_mix(mix,key_path,1000);
+	print_mix(mix);
+	
+	
+	
+	
 	return 0;
+	
 	
 }
 
