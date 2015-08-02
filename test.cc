@@ -97,7 +97,7 @@ int main(){
 
 
 //*************AES******************	
-	out << "*************AES***************" << endl;
+	out << "*************1.AES***************" << endl;
 	vector<al_protocol::element> ie_aes = {al_protocol::LUT,al_protocol::SH,
 	                                       al_protocol::GFM,al_protocol::BL};
 	//al_base aes = al_base(10, 32, 5, ie_aes);//初始化还是赋值，这里是调用拷贝初始化？？？？
@@ -120,7 +120,7 @@ int main(){
 
 
 //*************DES*******************
-	out << endl<<"*************DES****************" << endl;
+	out << endl<<"*************2.DES****************" << endl;
     vector<al_protocol::element> ie_des = {al_protocol::SUB, al_protocol::BL,
 	                                       al_protocol::LUT};
 	al_base des(16,32,7,ie_des);
@@ -140,7 +140,7 @@ int main(){
 	out<<"the max_delay_element is :"<<des_maxe/100.0<<"ns"<<endl;	
 
 //**************IDEA******************
-	out << endl << "*************IDEA*************" << endl;
+	out << endl << "*************3.IDEA*************" << endl;
     vector<al_protocol::element> ie_idea = {al_protocol::MM, al_protocol::MAS,
 	                                        al_protocol::BL};
 	al_base idea(8,16,23,ie_idea);
@@ -160,7 +160,7 @@ int main(){
 	out<<"the max_delay_element is :"<<idea_maxe/100.0<<"ns"<<endl;	
 	
 //**************BLOWFISH******************
-	out << endl << "*************BLOWFISH*************" << endl;
+	out << endl << "*************4.BLOWFISH*************" << endl;
     vector<al_protocol::element> ie_blowfish = {al_protocol::LUT, al_protocol::BL,
 	                                        al_protocol::MAS};
 	al_base blowfish(16,32,14,ie_blowfish);
@@ -181,7 +181,7 @@ int main(){
 	
 	
 //**************CAMELLIA******************
-	out << endl << "*************CAMELLIA*************" << endl;
+	out << endl << "*************5.CAMELLIA*************" << endl;
     vector<al_protocol::element> ie_camellia = {al_protocol::LUT, al_protocol::BL,
 	                                            al_protocol::SUB};
 	al_base camellia(18,8,8,ie_camellia);
@@ -201,7 +201,7 @@ int main(){
 	out<<"the max_delay_element is :"<<camellia_maxe/100.0<<"ns"<<endl;		
 
 //**************CAST128******************
-	out << endl << "*************CAST128*************" << endl;
+	out << endl << "*************6.CAST128*************" << endl;
     vector<al_protocol::element> ie_cast128 = {al_protocol::BL, al_protocol::SH,
 	                                           al_protocol::LUT, al_protocol::MAS};
 	al_base cast128(16,32,14,ie_cast128);
@@ -222,7 +222,7 @@ int main(){
 
 	
 //**************GOST******************
-	out << endl << "*************GOST*************" << endl;
+	out << endl << "*************7.GOST*************" << endl;
     vector<al_protocol::element> ie_gost = {al_protocol::BL, al_protocol::SH,
 	                                           al_protocol::LUT, al_protocol::MAS};
 	al_base gost(32,32,5,ie_gost);
@@ -264,7 +264,7 @@ int main(){
 
 
 //**************RC5******************
-	out << endl << "*************RC5*************" << endl;
+	out << endl << "*************8.RC5*************" << endl;
     vector<al_protocol::element> ie_rc5 = {al_protocol::BL, al_protocol::SH,
 	                                       al_protocol::MAS};
 	al_base rc5(24,32,4,ie_rc5);
@@ -284,7 +284,7 @@ int main(){
 	out<<"the max_delay_element is :"<<rc5_maxe/100.0<<"ns"<<endl;	
 
 //**************SEED******************
-	out << endl << "*************SEED*************" << endl;
+	out << endl << "*************9.SEED*************" << endl;
     vector<al_protocol::element> ie_seed = {al_protocol::BL, al_protocol::LUT,
 	                                       al_protocol::MAS};
 	al_base seed(16,32,24,ie_seed);
@@ -304,7 +304,7 @@ int main(){
 	out<<"the max_delay_element is :"<<seed_maxe/100.0<<"ns"<<endl;		
 	
 //**************TWOFISH******************
-	out << endl << "*************TWOFISH*************" << endl;
+	out << endl << "*************10.TWOFISH*************" << endl;
     vector<al_protocol::element> ie_twofish = {al_protocol::BL, al_protocol::LUT,
 	                                           al_protocol::GFM, al_protocol::MAS,
 											   al_protocol::SH};
@@ -325,7 +325,7 @@ int main(){
 	out<<"the max_delay_element is :"<<twofish_maxe/100.0<<"ns"<<endl;		
 	
 //**************SM4******************
-	out << endl << "*************SM4*************" << endl;
+	out << endl << "*************11.SM4*************" << endl;
     vector<al_protocol::element> ie_sm4 = {al_protocol::BL, al_protocol::LUT,
 											   al_protocol::SH};
 	al_base sm4(32,32,9,ie_sm4);
@@ -345,7 +345,7 @@ int main(){
 	out<<"the max_delay_element is :"<<sm4_maxe/100.0<<"ns"<<endl;		
 	
 //**************RC6******************
-	out << endl << "*************RC6*************" << endl;
+	out << endl << "*************12.RC6*************" << endl;
     vector<al_protocol::element> ie_rc6 = {al_protocol::MAS, al_protocol::LUT,
 											   al_protocol::SH, al_protocol::BL};
 	al_base rc6(20,32,15,ie_rc6);
@@ -365,7 +365,7 @@ int main(){
 	out<<"the max_delay_element is :"<<rc6_maxe/100.0<<"ns"<<endl;		
 	
 //**************SERPENT******************
-	out << endl << "*************SERPENT*************" << endl;
+	out << endl << "*************13.SERPENT*************" << endl;
     vector<al_protocol::element> ie_serpent = {al_protocol::SH, al_protocol::BL, al_protocol::MAS, al_protocol::LUT};
 	al_base serpent(32,32,19,ie_serpent);
 	serpent.init_graph(init_al_graph,"SERPENT");
@@ -382,7 +382,63 @@ int main(){
 	al_protocol::element serpent_maxe;
 	serpent.max_delay_element(serpent_maxe);
 	out<<"the max_delay_element is :"<<serpent_maxe/100.0<<"ns"<<endl;	
-
+	
+//**************TEA******************
+	out << endl << "*************14.TEA*************" << endl;
+    vector<al_protocol::element> ie_tea = {al_protocol::BL, al_protocol::SH,
+	                                       al_protocol::MAS};
+	al_base tea(32,32,11,ie_tea);
+	tea.init_graph(init_al_graph,"TEA");
+	std::vector<al_protocol::element> tea_r;
+	int tea_delay;
+	tea.key_path(tea_r,tea_delay);
+	out<<"the critical path of tea is:"<<endl;
+	for(al_protocol::element i:tea_r){
+		print_element(i);
+		out<<" -> "<<endl;		
+	}
+	out<<"the total delay of a round is :"<<tea_delay/100.0<<"ns"<<endl;	
+	al_protocol::element tea_maxe;
+	tea.max_delay_element(tea_maxe);
+	out<<"the max_delay_element is :"<<tea_maxe/100.0<<"ns"<<endl;
+	
+//**************XTEA******************
+	out << endl << "*************15.XTEA*************" << endl;
+    vector<al_protocol::element> ie_xtea = {al_protocol::BL, al_protocol::SH,
+	                                       al_protocol::MAS};
+	al_base xtea(32,32,10,ie_xtea);
+	xtea.init_graph(init_al_graph,"XTEA");
+	std::vector<al_protocol::element> xtea_r;
+	int xtea_delay;
+	xtea.key_path(xtea_r,xtea_delay);
+	out<<"the critical path of xtea is:"<<endl;
+	for(al_protocol::element i:xtea_r){
+		print_element(i);
+		out<<" -> "<<endl;		
+	}
+	out<<"the total delay of a round is :"<<xtea_delay/100.0<<"ns"<<endl;	
+	al_protocol::element xtea_maxe;
+	xtea.max_delay_element(xtea_maxe);
+	out<<"the max_delay_element is :"<<xtea_maxe/100.0<<"ns"<<endl;	
+	
+//**************SKIPJECT******************
+	out << endl << "*************16.SKIPJECT*************" << endl;
+    vector<al_protocol::element> ie_skipject = {al_protocol::BL, al_protocol::LUT};
+	al_base skipject(32,8,15,ie_skipject);
+	skipject.init_graph(init_al_graph,"SKIPJECT");
+	std::vector<al_protocol::element> skipject_r;
+	int skipject_delay;
+	skipject.key_path(skipject_r,skipject_delay);
+	out<<"the critical path of skipject is:"<<endl;
+	for(al_protocol::element i:skipject_r){
+		print_element(i);
+		out<<" -> "<<endl;		
+	}
+	out<<"the total delay of a round is :"<<skipject_delay/100.0<<"ns"<<endl;	
+	al_protocol::element skipject_maxe;
+	skipject.max_delay_element(skipject_maxe);
+	out<<"the max_delay_element is :"<<skipject_maxe/100.0<<"ns"<<endl;	
+	
 	
 	
 //***************print mix************
