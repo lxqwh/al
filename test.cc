@@ -58,7 +58,7 @@ void mix_temp(std::map<string, set<int>> &mix,deque<al_protocol::element> &de, i
 			c_delay += int(de[j]);
 			if(c_delay <= delay){
 				s = s + element_to_string(de[j]) + " ";
-				mix[s + "| the delay is: " + std::to_string(c_delay)].insert(al);
+				mix[s + "| the delay is: " + std::to_string(c_delay/100.0) + " ns"].insert(al);
 			}
 			else
 				break;
