@@ -6,6 +6,8 @@
 #include<string.h>
 
 //#define NORMALIZE 
+#define GROUP 5
+#define NUM_P 16
 
 #define FILEPATH "./data_in"
 #define MEASURE_MAX
@@ -44,6 +46,7 @@ double randf(double m)
 {
         return m * rand() / (RAND_MAX - 1.);
 }
+
 struct player* load_data(const char* path,int player_num)
 {
     FILE* fp= NULL; 
@@ -106,11 +109,13 @@ struct player* load_data(const char* path,int player_num)
     fprintf(stderr,"%d player record got\n",player_index);
     return players;
 err_out:
+{
     if(players)
     {
         free(players);
-        return NULL;
     }
+	return NULL;
+}
 
 }
 
@@ -296,7 +301,7 @@ void output_result(struct player* players,int player_num,int cluster_num)
 
 int main()
 {
-    struct player* players = load_data(FILEPATH,16);
+    struct player* players = load_data(FILEPATH,NUM_P);
     if(players == NULL)
     {
         fprintf(stderr,"load data failed\n");
@@ -304,7 +309,7 @@ int main()
     }
     int ret = 0;
 #ifdef NORMALIZE
-    ret = calc_ratio(players,16,ratio);
+    ret = calc_ratio(players,NUM_P,ratio);
 #endif
     if(ret < 0 )
     {
@@ -312,7 +317,7 @@ int main()
         return -2;
     }
  
-    ret = K_mean_plus(players,16,4);
+    ret = K_mean_plus(players,NUM_P,GROUP);
     
-    output_result(players,16,4);
+    output_result(players,NUM_P,GROUP);
 }
