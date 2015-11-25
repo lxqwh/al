@@ -24,6 +24,10 @@ virtual void get_element_group(std::vector<std::vector<al_protocol::element>>&){
 virtual void key_path(std::vector<al_protocol::element> &, int &);
 virtual ~al_base();
 string getname(){return name;}
+size_t getround(){return round;}
+size_t getwidth(){return width;}
+ALGraph<int> * getgraph(){return al_graph;}
+std::vector<al_protocol::element> * getelements(){return elements;}
 };
 
 #endif
