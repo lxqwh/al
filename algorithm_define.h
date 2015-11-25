@@ -6,9 +6,9 @@
 
 
 #define BL_ 4
-#define LUT_ 50
+#define LUT_ 52
 #define MAS_ 27
-#define SH_ 27
+#define SH_ 28
 #define MM_ 90
 #define GFM_ 80
 #define SUB_ 50

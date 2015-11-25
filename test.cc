@@ -28,9 +28,9 @@ vector<deque<al_protocol::element>> key_path = vector<deque<al_protocol::element
 void print_element(int i){
 	switch(i){
 	case 4:     out<<"logic"; break;
-	case 50:    out<<"LUT"; break;
+	case 52:    out<<"LUT"; break;
 	case 27:    out<<"Modular add or sub "; break;
-	case 27:    out<<"Shift"; break;
+	case 28:    out<<"Shift"; break;
 	case 90:    out<<"Modular Multiplication"; break;
 	case 80:    out<<"GF Multiplication"; break;
 	case 50:    out<<"substitution"; break;
@@ -183,7 +183,7 @@ al_base* build_al(string type){
     return re;
 }
 
-void print_al_inf(ofstream &out, ofstream &out_round, ofstream &out_al, vector<deque<al_protocol::element>> &key_path, al_base *al){
+void print_al_inf(std::ofstream &out, std::ofstream &out_round, std::ofstream &out_al, vector<deque<al_protocol::element>> &key_path, al_base *al){
 	std::vector<al_protocol::element> al_r;
 	int delay;
 	al->key_path(al_r,delay);
@@ -200,7 +200,7 @@ void print_al_inf(ofstream &out, ofstream &out_round, ofstream &out_al, vector<d
 	out<<"the max_delay_element is :"<<maxe/100.0<<"ns"<<endl;	
 //for k-means
     out_round<<al->getname()<<" "<<delay/100.0<<endl;
-    out_al<<al->getname()<<<" "<(delay/100.0)*(al->getround())<<endl;
+    out_al<<al->getname()<<" "<<(delay/100.0)*(al->getround())<<endl;
 }
 
 
