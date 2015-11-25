@@ -312,7 +312,7 @@ int main()
         return -2;
     }
  
-    ret = K_mean_plus(players,16,4);
+    ret = K_mean_plus(players,16,5);
     
-    output_result(players,16,4);
+    output_result(players,16,5);
 }

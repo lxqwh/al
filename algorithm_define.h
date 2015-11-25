@@ -5,13 +5,13 @@
 #include <string>
 
 
-#define BL_ 30
-#define LUT_ 163
-#define MAS_ 356
-#define SH_ 164
-#define MM_ 462
-#define GFM_ 422
-#define SUB_ 60
+#define BL_ 4
+#define LUT_ 50
+#define MAS_ 27
+#define SH_ 27
+#define MM_ 90
+#define GFM_ 80
+#define SUB_ 50
 
 
 

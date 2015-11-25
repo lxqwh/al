@@ -9,6 +9,7 @@
 
 class al_base{
 protected:
+string name;
 size_t round;                                  //算法轮数
 size_t width;                                  //算子位宽
 std::vector<al_protocol::element> *elements;    //元素数组
@@ -22,6 +23,7 @@ void init_graph(void(*ptr)(ALGraph<int> &, std::string), std::string);
 virtual void get_element_group(std::vector<std::vector<al_protocol::element>>&){}
 virtual void key_path(std::vector<al_protocol::element> &, int &);
 virtual ~al_base();
+string getname(){return name;}
 };
 
 #endif

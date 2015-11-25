@@ -19,20 +19,22 @@ using std::string;
 using std::set;
 
 std::ofstream out("output.txt");
+std::ofstream out_round("data_in_round");
+std::ofstream out_al("data_in_al");
 std::map<string, set<int>> mix = std::map<string, set<int>>();
 vector<deque<al_protocol::element>> key_path = vector<deque<al_protocol::element>>();
 
 
 void print_element(int i){
 	switch(i){
-	case 30:     out<<"logic"; break;
-	case 163:    out<<"LUT"; break;
-	case 356:    out<<"Modular add or sub "; break;
-	case 164:    out<<"Shift"; break;
-	case 462:    out<<"Modular Multiplication"; break;
-	case 422:    out<<"GF Multiplication"; break;
-	case 60:     out<<"substitution"; break;
-	default:     out<<"error element,the delay is:"<<i<<endl; break;
+	case 4:     out<<"logic"; break;
+	case 50:    out<<"LUT"; break;
+	case 27:    out<<"Modular add or sub "; break;
+	case 27:    out<<"Shift"; break;
+	case 90:    out<<"Modular Multiplication"; break;
+	case 80:    out<<"GF Multiplication"; break;
+	case 50:    out<<"substitution"; break;
+	default:    out<<"error element,the delay is:"<<i<<endl; break;
 	}
 }
 string element_to_string (al_protocol::element i){
@@ -89,6 +91,12 @@ void print_mix(std::map<string, set<int>> &mix){
 
 	}
 }
+
+
+
+
+
+
 
 
 

@@ -3,8 +3,8 @@
 #include <vector>
 class al_protocol{
     public:
-	  enum element{ BL=30, LUT=163, MAS=356, SH=164, MM=462, GFM=422, SUB=60};
-      enum element_area{ BL_A=100, LUT_A=116037, MAS_A=1283, SH_A=1929, MM_A=12726, GFM_A=8547, SUB_A=1000};
+	  enum element{ BL=4, LUT=50, MAS=27, SH=27, MM=90, GFM=80, SUB=50};
+      enum element_area{ BL_A=300, LUT_A=110000, MAS_A=1283, SH_A=2003, MM_A=3898, GFM_A=7538, SUB_A=10000};
 };
 
 
