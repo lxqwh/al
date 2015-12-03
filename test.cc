@@ -117,7 +117,7 @@ al_base* build_al(string type){
 	else if(type=="CAMELLIA"){
 		ie = {al_protocol::LUT, al_protocol::BL,
 		      al_protocol::SUB};
-		re = new al_base(type,18,8,8,ie);
+		re = new al_base(type,18,32,8,ie);
 	}	
 	else if(type=="CAST128"){
 		ie = {al_protocol::BL, al_protocol::SH,
@@ -176,7 +176,7 @@ al_base* build_al(string type){
 	}	
 	else if(type=="SKIPJECT"){
 		ie = {al_protocol::BL, al_protocol::LUT};
-		re = new al_base(type,32,8,15,ie);
+		re = new al_base(type,32,32,15,ie);
 	}		
 	
 	re->init_graph(init_al_graph,type);		
