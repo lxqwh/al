@@ -18,7 +18,7 @@ using std::deque;
 using std::string;
 using std::set;
 
-std::ofstream out("output.txt");
+std::ofstream out("output");
 std::ofstream out_round("data_in_round");
 std::ofstream out_al("data_in_al");
 std::map<string, set<int>> mix = std::map<string, set<int>>();
@@ -183,7 +183,8 @@ al_base* build_al(string type){
     return re;
 }
 
-void print_al_inf(std::ofstream &out, std::ofstream &out_round, std::ofstream &out_al, vector<deque<al_protocol::element>> &key_path, al_base *al){
+void print_al_inf(std::ofstream &out, std::ofstream &out_round, std::ofstream &out_al, 
+                  vector<deque<al_protocol::element>> &key_path, al_base *al){
 	std::vector<al_protocol::element> al_r;
 	int delay;
 	al->key_path(al_r,delay);

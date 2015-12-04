@@ -5,13 +5,18 @@
 #include <string>
 
 
-#define BL_ 4
-#define LUT_ 52
-#define MAS_ 27
-#define SH_ 28
-#define MM_ 90
-#define GFM_ 80
-#define SUB_ 50
+//#define AESX2_ 8.1
+#define BR_    7.0
+#define AND_   2.0
+#define OR_    2.1
+#define NOT_   1
+#define XOR_   6,
+#define LUT_   52
+#define MAS_   27
+#define SH_    28
+#define MM_    90
+#define GFM_   80
+#define SUB_   50
 
 
 
@@ -22,7 +27,7 @@
 	(g).Insertedge(2,18,0);     (g).Insertedge(2,6,0);      (g).Insertedge(3,22,0);   (g).Insertedge(3,8,0);        \
 	(g).Insertedge(4,6,0);      (g).Insertedge(4,16,0);     (g).Insertedge(5,8,0);    (g).Insertedge(5,20,0);       \
 	                                                                                                      \
-	(g).Insertedge(6,7,BL_);    (g).Insertedge(8,9,BL_);                                                        \
+	(g).Insertedge(6,7,XOR_);    (g).Insertedge(8,9,XOR_);                                                        \
 	                                                                                                      \
 	(g).Insertedge(7,10,MM_);   (g).Insertedge(9,11,0);                                                        \
 	                                                                                                      \
@@ -34,33 +39,33 @@
 	                                                                                                      \
 	(g).Insertedge(13,18,0) ;   (g).Insertedge(13,14,0);    (g).Insertedge(13,16,0);                              \
 	                                                                                                      \
-	(g).Insertedge(18,19,BL_);	(g).Insertedge(14,15,MAS_); (g).Insertedge(16,17,BL_);                             \
+	(g).Insertedge(18,19,XOR_);	(g).Insertedge(14,15,MAS_); (g).Insertedge(16,17,XOR_);                             \
 	                                                                                                      \
 	(g).Insertedge(15,22,0);    (g).Insertedge(15,20,0);                                                       \
 	                                                                                                      \
-	(g).Insertedge(22,23,BL_);  (g).Insertedge(20,21,BL_); 
+	(g).Insertedge(22,23,XOR_);  (g).Insertedge(20,21,XOR_); 
 
 
 #define AES(g)                  \
     (g).Insertedge(1,2,LUT_);      \
-	(g).Insertedge(2,3,SH_);      \
+	(g).Insertedge(2,3,BR_);      \
 	(g).Insertedge(3,4,GFM_);      \
-	(g).Insertedge(4,5,BL_);
+	(g).Insertedge(4,5,XOR_);
 	
 
 #define DES(g)                  \
     (g).Insertedge(1,2,SUB_);       \
     (g).Insertedge(1,6,0);	    \
-	(g).Insertedge(2,3,BL_);       \
+	(g).Insertedge(2,3,XOR_);       \
 	(g).Insertedge(3,4,LUT_);      \
 	(g).Insertedge(4,5,SUB_);       \
 	(g).Insertedge(5,6,0);	    \
-	(g).Insertedge(6,7,BL_);		
+	(g).Insertedge(6,7,XOR_);		
 	
 	
 	
 #define BLOWFISH(g)                  \
-    (g).Insertedge(1,2,BL_);       \
+    (g).Insertedge(1,2,XOR_);       \
 	                                                                                      \
 	(g).Insertedge(2,3,LUT_);     (g).Insertedge(2,4,LUT_);  (g).Insertedge(2,5,LUT_);    \
 	(g).Insertedge(2,6,LUT_);  	                                                          \
@@ -71,7 +76,7 @@
 	                                                                                      \
 	(g).Insertedge(8,9,0);        (g).Insertedge(5,9,0);                                    \
 	                                                                                      \
-	(g).Insertedge(9,10,BL_);                                                             \
+	(g).Insertedge(9,10,XOR_);                                                             \
 	                                                                                      \
 	(g).Insertedge(10,11,0);	  (g).Insertedge(6,11,0);                                 \
 	                                                                                      \
@@ -79,17 +84,17 @@
                                                                                           \
 	(g).Insertedge(12,13,0);      (g).Insertedge(1,13,0);                                       \
                                                                                           \
-    (g).Insertedge(13,14,BL_);
+    (g).Insertedge(13,14,XOR_);
 
 
-#define CAMELLIA(g)                  \
-    (g).Insertedge(1,2,LUT_);       \
-	(g).Insertedge(2,3,BL_);       \
-	(g).Insertedge(3,4,BL_);       \
-	(g).Insertedge(4,5,BL_);       \
-	(g).Insertedge(5,6,BL_);       \
-	(g).Insertedge(6,7,SUB_);       \
-	(g).Insertedge(7,8,BL_);	
+#define CAMELLIA(g)                 \
+    (g).Insertedge(1,2,XOR_);       \
+    (g).Insertedge(2,3,LUT_);       \
+	(g).Insertedge(3,4,XOR_);       \
+	(g).Insertedge(4,5,XOR_);       \
+	(g).Insertedge(5,6,XOR_);       \
+	(g).Insertedge(6,7,BR_);       \
+	(g).Insertedge(7,8,XOR_);	
 	
 #define CAST128(g)                  \
     (g).Insertedge(1,2,MAS_);       \

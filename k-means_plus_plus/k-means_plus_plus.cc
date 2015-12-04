@@ -1,15 +1,15 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include<cstdio>
+#include<cstdlib>
 #include<io.h>
 #include<math.h>
 #include<process.h>
 #include<string.h>
 
 //#define NORMALIZE 
-#define GROUP 5
+#define GROUP 4
 #define NUM_P 16
 
-#define FILEPATH "./data_in"
+#define FILEPATH "./data_in_round"
 #define MEASURE_MAX
 #define BUFSIZE 4096
 #define PLAYER_NUM 100
