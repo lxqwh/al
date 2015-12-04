@@ -27,19 +27,31 @@ vector<deque<al_protocol::element>> key_path = vector<deque<al_protocol::element
 
 void print_element(int i){
 	switch(i){
-	case 4:     out<<"logic"; break;
-	case 52:    out<<"LUT"; break;
-	case 27:    out<<"Modular add or sub "; break;
-	case 28:    out<<"Shift"; break;
-	case 90:    out<<"Modular Multiplication"; break;
-	case 80:    out<<"GF Multiplication"; break;
-	case 50:    out<<"substitution"; break;
-	default:    out<<"error element,the delay is:"<<i<<endl; break;
+	case 300:    out<<"X2A1"; break;	
+	case 81:     out<<"AESX2"; break;		
+	case 70:     out<<"BR"; break;
+	case 20:     out<<"AND"; break;	
+	case 21:     out<<"OR"; break;	
+	case 10:     out<<"NOT"; break;	
+	case 60:     out<<"XOR"; break;	
+	case 520:    out<<"LUT"; break;
+	case 270:    out<<"Modular add or sub "; break;
+	case 271:    out<<"Shift"; break;
+	case 900:    out<<"Modular Multiplication"; break;
+	case 800:    out<<"GF Multiplication"; break;
+	case 500:    out<<"substitution"; break;
+	default:     out<<"error element,the delay is:"<<i<<endl; break;
 	}
 }
 string element_to_string (al_protocol::element i){
 	switch(i){
-	case al_protocol::BL:     return "BL";
+	case al_protocol::X2A1:   return "X2A1";
+	case al_protocol::AESX2:  return "AESX2";
+	case al_protocol::BR:     return "BR";
+	case al_protocol::AND:    return "AND";
+	case al_protocol::NOT:    return "NOT";
+	case al_protocol::XOR:    return "XOR";
+	case al_protocol::OR:     return "OR";
 	case al_protocol::LUT:    return "LUT"; 
 	case al_protocol::MAS:    return "MAS"; 
 	case al_protocol::SH:     return "SH"; 
@@ -60,7 +72,7 @@ void mix_temp(std::map<string, set<int>> &mix,deque<al_protocol::element> &de, i
 			c_delay += int(de[j]);
 			if(c_delay <= delay){
 				s = s + element_to_string(de[j]) + " ";
-				mix[s + "| the delay is: " + std::to_string(c_delay/100.0) + " ns"].insert(al);
+				mix[s + "| the delay is: " + std::to_string(c_delay/1000.0) + " ns"].insert(al);
 			}
 			else
 				break;
@@ -95,37 +107,37 @@ al_base* build_al(string type){
 	al_base *re;
 	vector<al_protocol::element> ie; 
 	if(type=="AES"){
-		ie = {al_protocol::LUT,al_protocol::SH,
-	          al_protocol::GFM,al_protocol::BL};
+		ie = {al_protocol::LUT,al_protocol::BR,
+	          al_protocol::GFM,al_protocol::XOR};
 		re = new al_base(type,10, 32, 5, ie);
 	}	
 	else if(type=="DES"){
-		ie = {al_protocol::SUB, al_protocol::BL,
+		ie = {al_protocol::SUB, al_protocol::XOR,
 	          al_protocol::LUT};
 		re = new al_base(type,16,32,7,ie);
 	}
 	else if(type=="IDEA"){
 		ie = {al_protocol::MM, al_protocol::MAS,
-		      al_protocol::BL};
+		      al_protocol::XOR};
 		re = new al_base(type,8,16,23,ie);
 	}		
 	else if(type=="BLOWFISH"){
-		ie = {al_protocol::LUT, al_protocol::BL,
+		ie = {al_protocol::LUT, al_protocol::XOR,
 		      al_protocol::MAS};
 		re = new al_base(type,16,32,14,ie);
 	}	
 	else if(type=="CAMELLIA"){
-		ie = {al_protocol::LUT, al_protocol::BL,
+		ie = {al_protocol::LUT, al_protocol::XOR,
 		      al_protocol::SUB};
 		re = new al_base(type,18,32,8,ie);
 	}	
 	else if(type=="CAST128"){
-		ie = {al_protocol::BL, al_protocol::SH,
+		ie = {al_protocol::XOR, al_protocol::SH,
 		      al_protocol::LUT, al_protocol::MAS};
 		re = new al_base(type,16,32,14,ie);
 	}	
 	else if(type=="GOST"){
-		ie = {al_protocol::BL, al_protocol::SH,
+		ie = {al_protocol::XOR, al_protocol::SH,
 		      al_protocol::LUT, al_protocol::MAS};
 		re = new al_base(type,32,32,5,ie);
 	}		
@@ -134,48 +146,48 @@ al_base* build_al(string type){
 //		re = new al_base(type,32,32,5,ie);
 //	}		
 	else if(type=="RC5"){
-		ie = {al_protocol::BL, al_protocol::SH,
+		ie = {al_protocol::XOR, al_protocol::SH,
 		      al_protocol::MAS};
 		re = new al_base(type,24,32,4,ie);
 	}		
 	else if(type=="SEED"){
-		ie = {al_protocol::BL, al_protocol::LUT,
+		ie = {al_protocol::XOR, al_protocol::LUT,
 		      al_protocol::MAS};
 		re = new al_base(type,16,32,24,ie);
 	}		
 	else if(type=="TWOFISH"){
-		ie = {al_protocol::BL, al_protocol::LUT,
+		ie = {al_protocol::XOR, al_protocol::LUT,
 		      al_protocol::GFM, al_protocol::MAS,
 		      al_protocol::SH};
 		re = new al_base(type,16,32,20,ie);
 	}		
 	else if(type=="SM4"){
-		ie = {al_protocol::BL, al_protocol::LUT,
+		ie = {al_protocol::XOR, al_protocol::LUT,
 		      al_protocol::SH};
 		re = new al_base(type,32,32,9,ie);
 	}		
 	else if(type=="RC6"){
-		ie = {al_protocol::MAS, al_protocol::LUT,
-		      al_protocol::SH, al_protocol::BL};
+		ie = {al_protocol::MAS, al_protocol::LUT,al_protocol::X2A1,
+		      al_protocol::SH, al_protocol::XOR};
 		re = new al_base(type,20,32,15,ie);
 	}		
 	else if(type=="SERPENT"){
-		ie = {al_protocol::SH, al_protocol::BL, 
+		ie = {al_protocol::SH, al_protocol::XOR, 
 		      al_protocol::MAS, al_protocol::LUT};
 		re = new al_base(type,32,32,19,ie);
 	}		
 	else if(type=="TEA"){
-		ie = {al_protocol::BL, al_protocol::SH,
+		ie = {al_protocol::XOR, al_protocol::SH,
 		      al_protocol::MAS};
 		re = new al_base(type,32,32,11,ie);
 	}	
 	else if(type=="XTEA"){
-		ie = {al_protocol::BL, al_protocol::SH,
+		ie = {al_protocol::XOR, al_protocol::SH,
 		      al_protocol::MAS};
 		re = new al_base(type,32,32,10,ie);
 	}	
 	else if(type=="SKIPJECT"){
-		ie = {al_protocol::BL, al_protocol::LUT};
+		ie = {al_protocol::XOR, al_protocol::LUT};
 		re = new al_base(type,32,32,15,ie);
 	}		
 	
@@ -195,13 +207,13 @@ void print_al_inf(std::ofstream &out, std::ofstream &out_round, std::ofstream &o
 		print_element(i);
 		out<<" -> "<<endl;		
 	}
-	out<<"the total delay of a round is :"<<delay/100.0<<"ns"<<endl;	
+	out<<"the total delay of a round is :"<<delay/1000.0<<"ns"<<endl;	
 	al_protocol::element maxe;
 	al->max_delay_element(maxe);
-	out<<"the max_delay_element is :"<<maxe/100.0<<"ns"<<endl;	
+	out<<"the max_delay_element is :"<<maxe/1000.0<<"ns"<<endl;	
 //for k-means
-    out_round<<al->getname()<<" "<<delay/100.0<<endl;
-    out_al<<al->getname()<<" "<<(delay/100.0)*(al->getround())<<endl;
+    out_round<<al->getname()<<" "<<delay/1000.0<<endl;
+    out_al<<al->getname()<<" "<<(delay/1000.0)*(al->getround())<<endl;
 }
 
 
@@ -304,7 +316,7 @@ int main(){
 	
 	
 //***************print mix************
-    do_mix(mix,key_path,500);
+    do_mix(mix,key_path,5000);
 	print_mix(mix);
 	
 	
