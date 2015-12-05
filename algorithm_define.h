@@ -5,19 +5,19 @@
 #include <string>
 
 
-#define AESX2_ 8.1   //AES有限域优化
-#define X2A1_  30     //RC6 *2+1优化
-#define BR_    7.0
-#define AND_   2.0
-#define OR_    2.1
-#define NOT_   1
-#define XOR_   6,
-#define LUT_   52
-#define MAS_   27
-#define SH_    28
-#define MM_    90
-#define GFM_   80
-#define SUB_   50
+#define AESX2_ 81    
+#define X2A1_  300     
+#define BR_    70
+#define AND_   20
+#define OR_    21
+#define NOT_   10
+#define XOR_   60
+#define LUT_   520
+#define MAS_   270
+#define SH_    271
+#define MM_    900
+#define GFM_   800
+#define SUB_   500
 
 
 

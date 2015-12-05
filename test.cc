@@ -62,7 +62,9 @@ string element_to_string (al_protocol::element i){
 	}
 }
 
-
+//***********************************
+//算子组合
+//***********************************
 void mix_temp(std::map<string, set<int>> &mix,deque<al_protocol::element> &de, int delay, int al){
 	int i = de.size();
 	string s = string();
@@ -103,6 +105,25 @@ void print_mix(std::map<string, set<int>> &mix){
 
 	}
 }
+
+//**********************************
+//中心算子的合理前后缀
+//特殊算子：1.找到第一个，往前后扩展（有效范围内：左（起点或者上一次的匹配点（不允许两个同时出现）），往后扩展（末尾，下一个匹配点）；到末尾结束）
+//sh\mas\等：跳过特殊算子：记录哪些是特殊算子
+//**********************************
+
+
+//**********************************
+//逻辑组合的选择
+//
+//**********************************
+
+
+
+
+
+
+
 al_base* build_al(string type){
 	al_base *re;
 	vector<al_protocol::element> ie; 
@@ -316,7 +337,7 @@ int main(){
 	
 	
 //***************print mix************
-    do_mix(mix,key_path,5000);
+    do_mix(mix,key_path,2000);
 	print_mix(mix);
 	
 	
