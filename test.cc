@@ -132,7 +132,7 @@ void mix_temp(std::map<string, set<int>> &mix,deque<al_protocol::element> &de, i
 
 void do_mix(std::map<string, set<int>> &mix, vector<deque<al_protocol::element>> &key_path, int delay){
 	for(unsigned i = 0; i<key_path.size(); i++){
-		mix_temp(mix,key_path[i], delay, i,1);
+		mix_temp(mix,key_path[i], delay, i, 2);
 	}
 }
 
@@ -199,7 +199,8 @@ void print_center_post(std::map<string, set<int>> &mix, string center) {
 	std::multimap<int, std::map<string, set<int>>::iterator> sorted;
 	int s_size = center.size();
 	for (std::map<string, set<int>>::iterator i = mix.begin(); i != mix.end(); i++) {
-		if (i->first.substr(i->first.size()-s_size, s_size) == center) {
+		if ((i->first.size() - s_size - 27) <= 0) continue;//?
+		if (i->first.substr(i->first.size() - s_size - 28, s_size) == center) {
 #if NOT_INCLUDE_SINGLE
 			if (i->second.size() == 1) continue;
 #endif
@@ -506,8 +507,8 @@ int main(){
     do_mix(mix,key_path,1000);
 	print_mix(mix);
 	
-	print_center_pre();
-
+	//print_center_pre();
+	//print_center_post();
 	
 	return 0;
 	
