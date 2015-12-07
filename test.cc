@@ -7,9 +7,11 @@
 #include <map>
 #include <deque>
 #include <vector>
+#include <algorithm>
 
-#define NOT_INCLUDE_SINGLE  1
 
+#define NOT_INCLUDE_SINGLE  0
+#define LEN 4
 
 using std::cout;
 using std::endl;
@@ -23,7 +25,8 @@ std::ofstream out_round("data_in_round");
 std::ofstream out_al("data_in_al");
 std::map<string, set<int>> mix = std::map<string, set<int>>();
 vector<deque<al_protocol::element>> key_path = vector<deque<al_protocol::element>>();
-
+vector<string> al_str = {"AES","DES","IDEA","BLOWFISH","CAMELLIA","CAST128","GOST","RC5","SEED","TWOFISH",
+                         "SM4","RC6","SERPENT","TEA","XTEA","SKIPJECT"};
 
 void print_element(int i){
 	switch(i){
@@ -35,11 +38,11 @@ void print_element(int i){
 	case 10:     out<<"NOT"; break;	
 	case 60:     out<<"XOR"; break;	
 	case 520:    out<<"LUT"; break;
-	case 270:    out<<"Modular add or sub "; break;
-	case 271:    out<<"Shift"; break;
-	case 900:    out<<"Modular Multiplication"; break;
-	case 800:    out<<"GF Multiplication"; break;
-	case 500:    out<<"substitution"; break;
+	case 270:    out<<"MAS"; break;
+	case 271:    out<<"SH"; break;
+	case 900:    out<<"MM"; break;
+	case 800:    out<<"GFM"; break;
+	case 500:    out<<"SUB"; break;
 	default:     out<<"error element,the delay is:"<<i<<endl; break;
 	}
 }
@@ -65,20 +68,60 @@ string element_to_string (al_protocol::element i){
 //***********************************
 //算子组合
 //***********************************
-void mix_temp(std::map<string, set<int>> &mix,deque<al_protocol::element> &de, int delay, int al){
+
+bool isspecial(al_protocol::element in){
+	switch(in){
+	case al_protocol::X2A1:   return true;
+	case al_protocol::AESX2:  return true;
+	case al_protocol::LUT:    return true;
+	case al_protocol::MM:     return true;
+	case al_protocol::GFM:    return true;
+	default:                  return false;
+	}
+}
+
+void mix_temp(std::map<string, set<int>> &mix,deque<al_protocol::element> &de, int delay, int al, int type=0){
 	int i = de.size();
 	string s = string();
 	int c_delay = 0;
+	bool go = false;
+	bool sp = false;
 	while(i-- >0){
 		for(size_t j=0;j<de.size();j++){
 			c_delay += int(de[j]);
-			if(c_delay <= delay){
+			
+			
+			if(type==0) go = (j>=LEN)?false:c_delay <= delay;
+			else if(type==1){
+				if(isspecial(de[j])){
+					if(sp) go=false;
+				    else{
+						sp=true;
+						go = (j>=LEN)?false:c_delay <= delay;
+					}
+				}		
+				else
+					go = (j>=LEN)?false:c_delay <= delay;
+			}
+			else if(type==2){
+				if(de[j]!=al_protocol::XOR)
+					go=false;
+				else
+					go=c_delay <= delay;
+			}
+			else {
+				out<<"error:错误的type..."<<endl;
+				go = false;
+			}
+			
+			if(go){
 				s = s + element_to_string(de[j]) + " ";
 				mix[s + "| the delay is: " + std::to_string(c_delay/1000.0) + " ns"].insert(al);
 			}
 			else
 				break;
 		}
+		sp=false;
 		s.clear();
 		c_delay = 0;
 		de.push_back(*(de.begin()));
@@ -86,9 +129,10 @@ void mix_temp(std::map<string, set<int>> &mix,deque<al_protocol::element> &de, i
 	}
 }
 
+
 void do_mix(std::map<string, set<int>> &mix, vector<deque<al_protocol::element>> &key_path, int delay){
 	for(unsigned i = 0; i<key_path.size(); i++){
-		mix_temp(mix,key_path[i], delay, i+1);
+		mix_temp(mix,key_path[i], delay, i,1);
 	}
 }
 
@@ -100,10 +144,128 @@ void print_mix(std::map<string, set<int>> &mix){
 		out << "组合类型: " << i->first << endl;
 		out << "算法个数: " << i->second.size() << " 分别是：" << endl;
 		for (int j : i->second)
-			out << j << " ";
+			out << al_str[j] << " ";
 		out << endl;	
 
 	}
+}
+
+void print_center(std::map<string, set<int>> &mix, string center){
+	std::multimap<int, std::map<string, set<int>>::iterator> sorted;
+	for (std::map<string, set<int>>::iterator i = mix.begin(); i != mix.end(); i++){
+		if((i->first).find(center)!=string::npos){
+#if NOT_INCLUDE_SINGLE
+    	    if(i->second.size()==1) continue;
+#endif
+            sorted.insert(std::make_pair(i->second.size(),i));
+    	}
+		else continue;
+	}
+	std::multimap<int,std::map<string, set<int>>::iterator>::iterator beg=sorted.begin();
+	while(beg!=sorted.end()){
+		out << "组合类型: " << beg->second->first << endl;
+		out << "算法个数: " << beg->second->second.size() << " 分别是：" << endl;
+		for (int j : beg->second->second)
+			out << al_str[j] << " ";
+		out << endl;	
+        ++beg;		
+	}
+}
+
+void print_center_pre(std::map<string, set<int>> &mix, string center) {
+	std::multimap<int, std::map<string, set<int>>::iterator> sorted;
+	int s_size = center.size();
+	for (std::map<string, set<int>>::iterator i = mix.begin(); i != mix.end(); i++) {
+		if (i->first.substr(0,s_size)==center) {
+#if NOT_INCLUDE_SINGLE
+			if (i->second.size() == 1) continue;
+#endif
+			sorted.insert(std::make_pair(i->second.size(), i));
+		}
+		else continue;
+	}
+	std::multimap<int, std::map<string, set<int>>::iterator>::iterator beg = sorted.begin();
+	while (beg != sorted.end()) {
+		out << "组合类型: " << beg->second->first << endl;
+		out << "算法个数: " << beg->second->second.size() << " 分别是：" << endl;
+		for (int j : beg->second->second)
+			out << al_str[j] << " ";
+		out << endl;
+		++beg;
+	}
+}
+
+void print_center_post(std::map<string, set<int>> &mix, string center) {
+	std::multimap<int, std::map<string, set<int>>::iterator> sorted;
+	int s_size = center.size();
+	for (std::map<string, set<int>>::iterator i = mix.begin(); i != mix.end(); i++) {
+		if (i->first.substr(i->first.size()-s_size, s_size) == center) {
+#if NOT_INCLUDE_SINGLE
+			if (i->second.size() == 1) continue;
+#endif
+			sorted.insert(std::make_pair(i->second.size(), i));
+		}
+		else continue;
+	}
+	std::multimap<int, std::map<string, set<int>>::iterator>::iterator beg = sorted.begin();
+	while (beg != sorted.end()) {
+		out << "组合类型: " << beg->second->first << endl;
+		out << "算法个数: " << beg->second->second.size() << " 分别是：" << endl;
+		for (int j : beg->second->second)
+			out << al_str[j] << " ";
+		out << endl;
+		++beg;
+	}
+}
+
+void print_center() {
+	out << endl << endl << "***********SH*********" << endl;
+	print_center(mix, "SH");
+	out << endl << endl << "***********MAS*********" << endl;
+	print_center(mix, "MAS");
+	out << endl << endl << "***********MM*********" << endl;
+	print_center(mix, "MM");
+	out << endl << endl << "***********LUT*********" << endl;
+	print_center(mix, "LUT");
+	out << endl << endl << "***********GFM*********" << endl;
+	print_center(mix, "GFM");
+	out << endl << endl << "***********SUB*********" << endl;
+	print_center(mix, "SUB");
+	out << endl << endl << "***********BR*********" << endl;
+	print_center(mix, "BR");
+}
+void print_center_pre() {
+	out << endl << endl << "***********SH*********" << endl;
+	print_center_pre(mix, "SH");
+	out << endl << endl << "***********MAS*********" << endl;
+	print_center_pre(mix, "MAS");
+	out << endl << endl << "***********MM*********" << endl;
+	print_center_pre(mix, "MM");
+	out << endl << endl << "***********LUT*********" << endl;
+	print_center_pre(mix, "LUT");
+	out << endl << endl << "***********GFM*********" << endl;
+	print_center_pre(mix, "GFM");
+	out << endl << endl << "***********SUB*********" << endl;
+	print_center_pre(mix, "SUB");
+	out << endl << endl << "***********BR*********" << endl;
+	print_center_pre(mix, "BR");
+}
+
+void print_center_post() {
+	out << endl << endl << "***********SH*********" << endl;
+	print_center_post(mix, "SH");
+	out << endl << endl << "***********MAS*********" << endl;
+	print_center_post(mix, "MAS");
+	out << endl << endl << "***********MM*********" << endl;
+	print_center_post(mix, "MM");
+	out << endl << endl << "***********LUT*********" << endl;
+	print_center_post(mix, "LUT");
+	out << endl << endl << "***********GFM*********" << endl;
+	print_center_post(mix, "GFM");
+	out << endl << endl << "***********SUB*********" << endl;
+	print_center_post(mix, "SUB");
+	out << endl << endl << "***********BR*********" << endl;
+	print_center_post(mix, "BR");
 }
 
 //**********************************
@@ -111,6 +273,10 @@ void print_mix(std::map<string, set<int>> &mix){
 //特殊算子：1.找到第一个，往前后扩展（有效范围内：左（起点或者上一次的匹配点（不允许两个同时出现）），往后扩展（末尾，下一个匹配点）；到末尾结束）
 //sh\mas\等：跳过特殊算子：记录哪些是特殊算子
 //**********************************
+
+
+
+
 
 
 //**********************************
@@ -337,11 +503,11 @@ int main(){
 	
 	
 //***************print mix************
-    do_mix(mix,key_path,2000);
+    do_mix(mix,key_path,1000);
 	print_mix(mix);
 	
-	
-	
+	print_center_pre();
+
 	
 	return 0;
 	
