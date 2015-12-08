@@ -10,8 +10,11 @@
 #include <algorithm>
 
 
-#define NOT_INCLUDE_SINGLE  0
-#define LEN 4
+#define NO_SINGLE  0 //0：包含单个 1：不包含单个
+#define LEN 4    //最长的组合（2-5）
+#define TYPE 1   //0:所有组合 1：去除特殊单元级联 2：只有抑或
+
+
 
 using std::cout;
 using std::endl;
@@ -19,6 +22,9 @@ using std::vector;
 using std::deque;
 using std::string;
 using std::set;
+using std::pair;
+using std::map;
+using std::multimap;
 
 std::ofstream out("output");
 std::ofstream out_round("data_in_round");
@@ -124,21 +130,21 @@ void mix_temp(std::map<string, set<int>> &mix,deque<al_protocol::element> &de, i
 		sp=false;
 		s.clear();
 		c_delay = 0;
-		de.push_back(*(de.begin()));
-		de.pop_front();
+		de.push_back(*(de.begin()));//头入尾
+		de.pop_front();//头出队，成环
 	}
 }
 
 
 void do_mix(std::map<string, set<int>> &mix, vector<deque<al_protocol::element>> &key_path, int delay){
 	for(unsigned i = 0; i<key_path.size(); i++){
-		mix_temp(mix,key_path[i], delay, i, 2);
+		mix_temp(mix,key_path[i], delay, i, TYPE);
 	}
 }
 
 void print_mix(std::map<string, set<int>> &mix){
 	for (std::map<string, set<int>>::iterator i = mix.begin(); i != mix.end(); i++){
-#if NOT_INCLUDE_SINGLE
+#if NO_SINGLE
 	    if(i->second.size()==1) continue;
 #endif
 		out << "组合类型: " << i->first << endl;
@@ -154,7 +160,7 @@ void print_center(std::map<string, set<int>> &mix, string center){
 	std::multimap<int, std::map<string, set<int>>::iterator> sorted;
 	for (std::map<string, set<int>>::iterator i = mix.begin(); i != mix.end(); i++){
 		if((i->first).find(center)!=string::npos){
-#if NOT_INCLUDE_SINGLE
+#if NO_SINGLE
     	    if(i->second.size()==1) continue;
 #endif
             sorted.insert(std::make_pair(i->second.size(),i));
@@ -176,8 +182,9 @@ void print_center_pre(std::map<string, set<int>> &mix, string center) {
 	std::multimap<int, std::map<string, set<int>>::iterator> sorted;
 	int s_size = center.size();
 	for (std::map<string, set<int>>::iterator i = mix.begin(); i != mix.end(); i++) {
-		if (i->first.substr(0,s_size)==center) {
-#if NOT_INCLUDE_SINGLE
+		//if (i->first.substr(0,s_size)==center) 
+		if(i->first.find(center)==0){
+#if NO_SINGLE
 			if (i->second.size() == 1) continue;
 #endif
 			sorted.insert(std::make_pair(i->second.size(), i));
@@ -199,9 +206,10 @@ void print_center_post(std::map<string, set<int>> &mix, string center) {
 	std::multimap<int, std::map<string, set<int>>::iterator> sorted;
 	int s_size = center.size();
 	for (std::map<string, set<int>>::iterator i = mix.begin(); i != mix.end(); i++) {
-		if ((i->first.size() - s_size - 27) <= 0) continue;//?
-		if (i->first.substr(i->first.size() - s_size - 28, s_size) == center) {
-#if NOT_INCLUDE_SINGLE
+		//if ((i->first.size() - int(s_size) - 28) < 0) continue;
+		//if (i->first.substr(i->first.size() - s_size - 28, s_size) == center) 
+		if(i->first[i->first.rfind(center)+s_size+1]=='|'){
+#if NO_SINGLE
 			if (i->second.size() == 1) continue;
 #endif
 			sorted.insert(std::make_pair(i->second.size(), i));
@@ -218,7 +226,22 @@ void print_center_post(std::map<string, set<int>> &mix, string center) {
 		++beg;
 	}
 }
-
+void print_center(void(*ptr)(std::map<string, set<int>> &mix, string center)){
+	out << endl << endl << "***********SH*********" << endl;
+	ptr(mix, "SH");
+	out << endl << endl << "***********MAS*********" << endl;
+	ptr(mix, "MAS");
+	out << endl << endl << "***********MM*********" << endl;
+	ptr(mix, "MM");
+	out << endl << endl << "***********LUT*********" << endl;
+	ptr(mix, "LUT");
+	out << endl << endl << "***********GFM*********" << endl;
+	ptr(mix, "GFM");
+	out << endl << endl << "***********SUB*********" << endl;
+	ptr(mix, "SUB");
+	out << endl << endl << "***********BR*********" << endl;
+	ptr(mix, "BR");
+}
 void print_center() {
 	out << endl << endl << "***********SH*********" << endl;
 	print_center(mix, "SH");
@@ -274,10 +297,6 @@ void print_center_post() {
 //特殊算子：1.找到第一个，往前后扩展（有效范围内：左（起点或者上一次的匹配点（不允许两个同时出现）），往后扩展（末尾，下一个匹配点）；到末尾结束）
 //sh\mas\等：跳过特殊算子：记录哪些是特殊算子
 //**********************************
-
-
-
-
 
 
 //**********************************
@@ -399,7 +418,7 @@ void print_al_inf(std::ofstream &out, std::ofstream &out_round, std::ofstream &o
 	al_protocol::element maxe;
 	al->max_delay_element(maxe);
 	out<<"the max_delay_element is :"<<maxe/1000.0<<"ns"<<endl;	
-//for k-means
+//input for k-means
     out_round<<al->getname()<<" "<<delay/1000.0<<endl;
     out_al<<al->getname()<<" "<<(delay/1000.0)*(al->getround())<<endl;
 }
@@ -506,10 +525,10 @@ int main(){
 //***************print mix************
     do_mix(mix,key_path,1000);
 	print_mix(mix);
-	
-	//print_center_pre();
-	//print_center_post();
-	
+	print_center(print_center_pre);
+	print_center(print_center_post);
+
+
 	return 0;
 	
 	
