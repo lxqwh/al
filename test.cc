@@ -48,7 +48,7 @@ void print_element(int i){
 	case 271:    out<<"SH"; break;
 	case 900:    out<<"MM"; break;
 	case 800:    out<<"GFM"; break;
-	case 500:    out<<"SUB"; break;
+	case 500:    out<<"PER"; break;
 	default:     out<<"error element,the delay is:"<<i<<endl; break;
 	}
 }
@@ -66,7 +66,7 @@ string element_to_string (al_protocol::element i){
 	case al_protocol::SH:     return "SH"; 
 	case al_protocol::MM:     return "MM"; 
 	case al_protocol::GFM:    return "GFM";
-	case al_protocol::SUB:    return "SUB"; 
+	case al_protocol::PER:    return "PER"; 
 	default:     out<<"error element,the delay is:"<<i<<endl; return string();
 	}
 }
@@ -237,59 +237,10 @@ void print_center(void(*ptr)(std::map<string, set<int>> &mix, string center)){
 	ptr(mix, "LUT");
 	out << endl << endl << "***********GFM*********" << endl;
 	ptr(mix, "GFM");
-	out << endl << endl << "***********SUB*********" << endl;
-	ptr(mix, "SUB");
+	out << endl << endl << "***********PER*********" << endl;
+	ptr(mix, "PER");
 	out << endl << endl << "***********BR*********" << endl;
 	ptr(mix, "BR");
-}
-void print_center() {
-	out << endl << endl << "***********SH*********" << endl;
-	print_center(mix, "SH");
-	out << endl << endl << "***********MAS*********" << endl;
-	print_center(mix, "MAS");
-	out << endl << endl << "***********MM*********" << endl;
-	print_center(mix, "MM");
-	out << endl << endl << "***********LUT*********" << endl;
-	print_center(mix, "LUT");
-	out << endl << endl << "***********GFM*********" << endl;
-	print_center(mix, "GFM");
-	out << endl << endl << "***********SUB*********" << endl;
-	print_center(mix, "SUB");
-	out << endl << endl << "***********BR*********" << endl;
-	print_center(mix, "BR");
-}
-void print_center_pre() {
-	out << endl << endl << "***********SH*********" << endl;
-	print_center_pre(mix, "SH");
-	out << endl << endl << "***********MAS*********" << endl;
-	print_center_pre(mix, "MAS");
-	out << endl << endl << "***********MM*********" << endl;
-	print_center_pre(mix, "MM");
-	out << endl << endl << "***********LUT*********" << endl;
-	print_center_pre(mix, "LUT");
-	out << endl << endl << "***********GFM*********" << endl;
-	print_center_pre(mix, "GFM");
-	out << endl << endl << "***********SUB*********" << endl;
-	print_center_pre(mix, "SUB");
-	out << endl << endl << "***********BR*********" << endl;
-	print_center_pre(mix, "BR");
-}
-
-void print_center_post() {
-	out << endl << endl << "***********SH*********" << endl;
-	print_center_post(mix, "SH");
-	out << endl << endl << "***********MAS*********" << endl;
-	print_center_post(mix, "MAS");
-	out << endl << endl << "***********MM*********" << endl;
-	print_center_post(mix, "MM");
-	out << endl << endl << "***********LUT*********" << endl;
-	print_center_post(mix, "LUT");
-	out << endl << endl << "***********GFM*********" << endl;
-	print_center_post(mix, "GFM");
-	out << endl << endl << "***********SUB*********" << endl;
-	print_center_post(mix, "SUB");
-	out << endl << endl << "***********BR*********" << endl;
-	print_center_post(mix, "BR");
 }
 
 //**********************************
@@ -319,7 +270,7 @@ al_base* build_al(string type){
 		re = new al_base(type,10, 32, 5, ie);
 	}	
 	else if(type=="DES"){
-		ie = {al_protocol::SUB, al_protocol::XOR,
+		ie = {al_protocol::PER, al_protocol::XOR,
 	          al_protocol::LUT};
 		re = new al_base(type,16,32,7,ie);
 	}
@@ -335,7 +286,7 @@ al_base* build_al(string type){
 	}	
 	else if(type=="CAMELLIA"){
 		ie = {al_protocol::LUT, al_protocol::XOR,
-		      al_protocol::SUB};
+		      al_protocol::PER};
 		re = new al_base(type,18,32,8,ie);
 	}	
 	else if(type=="CAST128"){

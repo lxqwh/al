@@ -17,7 +17,7 @@
 #define SH_    271
 #define MM_    900
 #define GFM_   800
-#define SUB_   500
+#define PER_   500
 
 
 
@@ -55,11 +55,11 @@
 	
 
 #define DES(g)                  \
-    (g).Insertedge(1,2,SUB_);       \
+    (g).Insertedge(1,2,PER_);       \
     (g).Insertedge(1,6,0);	    \
 	(g).Insertedge(2,3,XOR_);       \
 	(g).Insertedge(3,4,LUT_);      \
-	(g).Insertedge(4,5,SUB_);       \
+	(g).Insertedge(4,5,PER_);       \
 	(g).Insertedge(5,6,0);	    \
 	(g).Insertedge(6,7,XOR_);		
 	
