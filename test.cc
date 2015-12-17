@@ -32,7 +32,10 @@ std::ofstream out_al("data_in_al");
 std::map<string, set<int>> mix = std::map<string, set<int>>();
 vector<deque<al_protocol::element>> key_path = vector<deque<al_protocol::element>>();
 vector<string> al_str = {"AES","DES","IDEA","BLOWFISH","CAMELLIA","CAST128","GOST","RC5","SEED","TWOFISH",
-                         "SM4","RC6","SERPENT","TEA","XTEA","SKIPJECT"};
+                         "SM4","RC6","SERPENT","TEA","XTEA","SKIPJECT",
+/*new added*/			 "SPECK","SIMON","LUCIFER","CLEFIA","ARIA","C2","PRESENT","MACGUFFIN","SQUARE",
+						 "M6","ICE","SHARK","CS_CIPHER","NUSH","GRAND_CRU","Q","E2","KHAZAD",
+						 "HIEROCRYPT_L1","HIEROCRYPT_3"};
 
 void print_element(int i){
 	switch(i){
