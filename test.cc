@@ -624,14 +624,14 @@ int main(){
     print_al_inf(out, out_round, out_al, key_path, al);
 	
 //**************CS_CIPHER******************
-	out << endl << "*************29.CS_CIPHER*************" << endl;
-	al = build_al("CS_CIPHER");
-    print_al_inf(out, out_round, out_al, key_path, al);
+//	out << endl << "*************29.CS_CIPHER*************" << endl;
+//	al = build_al("CS_CIPHER");
+//    print_al_inf(out, out_round, out_al, key_path, al);
 	
 //**************NUSH******************
-	out << endl << "*************30.NUSH*************" << endl;
-	al = build_al("NUSH");
-    print_al_inf(out, out_round, out_al, key_path, al);
+//	out << endl << "*************30.NUSH*************" << endl;
+//	al = build_al("NUSH");
+//    print_al_inf(out, out_round, out_al, key_path, al);
 	
 //**************GRAND_CRU******************
 	out << endl << "*************31.GRAND_CRU*************" << endl;

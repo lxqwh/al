@@ -241,9 +241,9 @@
 
 //*******************************************new added*************************************************
 #define SPECK(g)                  \
-    (g).Insertedge(1,2,BR_); (g).Insertedge(1,3,0); (g).Insertedge(1,8,SH_); \
+    (g).Insertedge(1,2,BR_); (g).Insertedge(1,3,0);  (g).Insertedge(2,3,0); \
 	(g).Insertedge(3,4,MAS_); (g).Insertedge(4,5,XOR_); (g).Insertedge(5,6,0); \
-    (g).Insertedge(8,6,0); (g).Insertedge(2,3,0); (g).Insertedge(6,7,XOR_);
+    (g).Insertedge(1,8,SH_); (g).Insertedge(8,6,0); (g).Insertedge(6,7,XOR_);
 
 #define SIMON(g)                  \
     (g).Insertedge(1,2,BR_); (g).Insertedge(1,3,SH_); (g).Insertedge(1,4,SH_); \
