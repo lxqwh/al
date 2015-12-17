@@ -49,6 +49,7 @@ void print_element(int i){
 	case 900:    out<<"MM"; break;
 	case 800:    out<<"GFM"; break;
 	case 500:    out<<"PER"; break;
+	case 61:     out<<"PBOX"; break;
 	default:     out<<"error element,the delay is:"<<i<<endl; break;
 	}
 }
@@ -67,6 +68,7 @@ string element_to_string (al_protocol::element i){
 	case al_protocol::MM:     return "MM"; 
 	case al_protocol::GFM:    return "GFM";
 	case al_protocol::PER:    return "PER"; 
+	case al_protocol::PBOX:    return "PBOX"; 
 	default:     out<<"error element,the delay is:"<<i<<endl; return string();
 	}
 }
@@ -79,6 +81,7 @@ bool isspecial(al_protocol::element in){
 	switch(in){
 	case al_protocol::X2A1:   return true;
 	case al_protocol::AESX2:  return true;
+	case al_protocol::PBOX:   return true;	
 	case al_protocol::LUT:    return true;
 	case al_protocol::MM:     return true;
 	case al_protocol::GFM:    return true;
@@ -347,7 +350,89 @@ al_base* build_al(string type){
 	else if(type=="SKIPJECT"){
 		ie = {al_protocol::XOR, al_protocol::LUT};
 		re = new al_base(type,32,32,15,ie);
+	}
+//*********************new added***************************	
+	else if(type=="SPECK"){
+		ie = {al_protocol::XOR, al_protocol::MAS, al_protocol::SH, al_protocol::BR};
+		re = new al_base(type,22,32,8,ie);
+	}	
+	else if(type=="SIMON"){
+		ie = {al_protocol::XOR, al_protocol::AND, al_protocol::SH, al_protocol::BR};
+		re = new al_base(type,42,32,10,ie);
+	}	
+	else if(type=="LUCIFER"){
+		ie = {al_protocol::XOR, al_protocol::MAS, al_protocol::LUT, al_protocol::PBOX};
+		re = new al_base(type,16,32,5,ie);
+	}
+	else if(type=="CLEFIA"){
+		ie = {al_protocol::XOR, al_protocol::GFM, al_protocol::LUT};
+		re = new al_base(type,18,32,5,ie);
+	}	
+	else if(type=="ARIA"){
+		ie = {al_protocol::XOR, al_protocol::GFM, al_protocol::LUT};
+		re = new al_base(type,12,32,4,ie);
+	}	
+	else if(type=="C2"){
+		ie = {al_protocol::XOR, al_protocol::MAS, al_protocol::LUT, al_protocol::SH};
+		re = new al_base(type,10,32,12,ie);
 	}		
+	else if(type=="PRESENT"){
+		ie = {al_protocol::XOR, al_protocol::LUT, al_protocol::PER};
+		re = new al_base(type,31,4,4,ie);
+	}	
+	else if(type=="MACGUFFIN"){
+		ie = {al_protocol::XOR, al_protocol::LUT, al_protocol::SH};
+		re = new al_base(type,32,8,5,ie);
+	}		
+	else if(type=="SQUARE"){
+		ie = {al_protocol::XOR, al_protocol::LUT, al_protocol::GFM, al_protocol::PER};
+		re = new al_base(type,8,32,5,ie);
+	}		
+	else if(type=="M6"){
+		ie = {al_protocol::XOR, al_protocol::SH, al_protocol::MAS};
+		re = new al_base(type,10,32,11,ie);
+	}				
+	else if(type=="ICE"){
+		ie = {al_protocol::XOR, al_protocol::PER, al_protocol::LUT};
+		re = new al_base(type,16,32,7,ie);
+	}		
+	else if(type=="SHARK"){
+		ie = {al_protocol::XOR, al_protocol::GFM, al_protocol::LUT};
+		re = new al_base(type,6,8,4,ie);
+	}		
+	else if(type=="CS_CIPHER"){
+		ie = {al_protocol::XOR, al_protocol::AND, al_protocol::LUT, al_protocol::SH};
+		re = new al_base(type,24,8,12,ie);
+	}		
+	else if(type=="NUSH"){
+		ie = {al_protocol::XOR, al_protocol::AND, al_protocol::OR, al_protocol::SH, al_protocol::MAS};
+		re = new al_base(type,17,32,13,ie);
+	}
+	else if(type=="GRAND_CRU"){
+		ie = {al_protocol::XOR, al_protocol::LUT, al_protocol::GFM, al_protocol::BR, al_protocol::PER};
+		re = new al_base(type,10,32,6,ie);
+	}
+	else if(type=="Q"){
+		ie = {al_protocol::XOR, al_protocol::LUT, al_protocol::BR, al_protocol::PER};
+		re = new al_base(type,8,32,12,ie);
+	}		
+	else if(type=="E2"){
+		ie = {al_protocol::XOR, al_protocol::LUT};
+		re = new al_base(type,12,8,9,ie);
+	}			
+	else if(type=="KHAZAD"){
+		ie = {al_protocol::XOR, al_protocol::LUT, al_protocol::GFM};
+		re = new al_base(type,8,8,4,ie);
+	}
+	else if(type=="HIEROCRYPT_L1"){
+		ie = {al_protocol::XOR, al_protocol::LUT, al_protocol::GFM};
+		re = new al_base(type,6.5,8,7,ie);
+	}		
+	else if(type=="HIEROCRYPT_3"){
+		ie = {al_protocol::XOR, al_protocol::LUT, al_protocol::GFM};
+		re = new al_base(type,8.5,8,7,ie);
+	}		
+	
 	
 	re->init_graph(init_al_graph,type);		
     return re;
@@ -470,8 +555,111 @@ int main(){
 	out << endl << "*************16.SKIPJECT*************" << endl;
 	al = build_al("SKIPJECT");
     print_al_inf(out, out_round, out_al, key_path, al);
+
+//***************************************************************
+//                       new added
+//***************************************************************	
 	
+//**************SPECK******************
+	out << endl << "*************17.SPECK*************" << endl;
+	al = build_al("SPECK");
+    print_al_inf(out, out_round, out_al, key_path, al);	
 	
+//**************SIMON******************
+	out << endl << "*************18.SIMON*************" << endl;
+	al = build_al("SIMON");
+    print_al_inf(out, out_round, out_al, key_path, al);
+
+//**************LUCIFER******************
+	out << endl << "*************19.LUCIFER*************" << endl;
+	al = build_al("LUCIFER");
+    print_al_inf(out, out_round, out_al, key_path, al);
+	
+//**************CLEFIA******************
+	out << endl << "*************20.CLEFIA*************" << endl;
+	al = build_al("CLEFIA");
+    print_al_inf(out, out_round, out_al, key_path, al);
+	
+//**************ARIA******************
+	out << endl << "*************21.ARIA*************" << endl;
+	al = build_al("ARIA");
+    print_al_inf(out, out_round, out_al, key_path, al);
+	
+//**************C2******************
+	out << endl << "*************22.C2*************" << endl;
+	al = build_al("C2");
+    print_al_inf(out, out_round, out_al, key_path, al);
+
+//**************PRESENT******************
+	out << endl << "*************23.PRESENT*************" << endl;
+	al = build_al("PRESENT");
+    print_al_inf(out, out_round, out_al, key_path, al);
+
+//**************MACGUFFIN******************
+	out << endl << "*************24.MACGUFFIN*************" << endl;
+	al = build_al("MACGUFFIN");
+    print_al_inf(out, out_round, out_al, key_path, al);
+
+//**************SQUARE******************
+	out << endl << "*************25.SQUARE*************" << endl;
+	al = build_al("SQUARE");
+    print_al_inf(out, out_round, out_al, key_path, al);
+	
+//**************M6******************
+	out << endl << "*************26.M6*************" << endl;
+	al = build_al("M6");
+    print_al_inf(out, out_round, out_al, key_path, al);
+	
+//**************ICE******************
+	out << endl << "*************27.ICE*************" << endl;
+	al = build_al("ICE");
+    print_al_inf(out, out_round, out_al, key_path, al);
+	
+//**************SHARK******************
+	out << endl << "*************28.SHARK*************" << endl;
+	al = build_al("SHARK");
+    print_al_inf(out, out_round, out_al, key_path, al);
+	
+//**************CS_CIPHER******************
+	out << endl << "*************29.CS_CIPHER*************" << endl;
+	al = build_al("CS_CIPHER");
+    print_al_inf(out, out_round, out_al, key_path, al);
+	
+//**************NUSH******************
+	out << endl << "*************30.NUSH*************" << endl;
+	al = build_al("NUSH");
+    print_al_inf(out, out_round, out_al, key_path, al);
+	
+//**************GRAND_CRU******************
+	out << endl << "*************31.GRAND_CRU*************" << endl;
+	al = build_al("GRAND_CRU");
+    print_al_inf(out, out_round, out_al, key_path, al);
+	
+//**************Q******************
+	out << endl << "*************32.Q*************" << endl;
+	al = build_al("Q");
+    print_al_inf(out, out_round, out_al, key_path, al);
+	
+//**************E2******************
+	out << endl << "*************33.E2*************" << endl;
+	al = build_al("E2");
+    print_al_inf(out, out_round, out_al, key_path, al);
+	
+//**************KHAZAD******************
+	out << endl << "*************34.KHAZAD*************" << endl;
+	al = build_al("KHAZAD");
+    print_al_inf(out, out_round, out_al, key_path, al);
+	
+//**************HIEROCRYPT_L1******************
+	out << endl << "*************35.HIEROCRYPT_L1*************" << endl;
+	al = build_al("HIEROCRYPT_L1");
+    print_al_inf(out, out_round, out_al, key_path, al);
+	
+//**************HIEROCRYPT_3******************
+	out << endl << "*************36.HIEROCRYPT_3*************" << endl;
+	al = build_al("HIEROCRYPT_3");
+    print_al_inf(out, out_round, out_al, key_path, al);
+
 	
 //***************print mix************
     do_mix(mix,key_path,1000);

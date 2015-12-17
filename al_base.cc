@@ -1,6 +1,6 @@
 #include "al_base.h"
 
-al_base::al_base(std::string name, size_t r, size_t w, size_t v_num, std::vector<al_protocol::element> ie):name(name),round(r),width(w),elements(NULL),al_graph(NULL){
+al_base::al_base(std::string name, float r, size_t w, size_t v_num, std::vector<al_protocol::element> ie):name(name),round(r),width(w),elements(NULL),al_graph(NULL){
 	elements = new std::vector<al_protocol::element>();
 	*elements = ie;
 	al_graph = new ALGraph<int>(v_num, ALGraph<int>::DN);

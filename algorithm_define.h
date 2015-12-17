@@ -18,7 +18,7 @@
 #define MM_    900
 #define GFM_   800
 #define PER_   500
-
+#define PBOX_  60
 
 
 
@@ -239,7 +239,100 @@
 	(g).Insertedge(13,14,XOR_); \
 	(g).Insertedge(14,15,XOR_); 
 
+//*******************************************new added*************************************************
+#define SPECK(g)                  \
+    (g).Insertedge(1,2,BR_); (g).Insertedge(1,3,0); (g).Insertedge(1,8,SH_); \
+	(g).Insertedge(3,4,MAS_); (g).Insertedge(4,5,XOR_); (g).Insertedge(5,6,0); \
+    (g).Insertedge(8,6,0); (g).Insertedge(2,3,0); (g).Insertedge(6,7,XOR_);
 
+#define SIMON(g)                  \
+    (g).Insertedge(1,2,BR_); (g).Insertedge(1,3,SH_); (g).Insertedge(1,4,SH_); \
+	(g).Insertedge(2,3,0); (g).Insertedge(3,5,0); (g).Insertedge(4,7,0); \
+    (g).Insertedge(5,6,AND_); (g).Insertedge(6,7,0); (g).Insertedge(7,8,XOR_); \
+	(g).Insertedge(8,9,XOR_); (g).Insertedge(9,10,XOR_);
+
+#define LUCIFER(g)                  \
+    (g).Insertedge(1,2,MAS_); (g).Insertedge(2,3,LUT_); (g).Insertedge(3,4,PBOX_); \
+	(g).Insertedge(4,5,XOR_); 
+
+#define CLEFIA(g)                  \
+    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,3,LUT_); (g).Insertedge(3,4,GFM_); \
+	(g).Insertedge(4,5,XOR_); 	
+	
+#define ARIA(g)                  \
+    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,3,LUT_); (g).Insertedge(3,4,GFM_); 
+
+#define C2(g)                  \
+    (g).Insertedge(1,2,MAS_); (g).Insertedge(2,3,XOR_); (g).Insertedge(3,4,LUT_); \
+	(g).Insertedge(3,6,0); (g).Insertedge(4,5,SH_); (g).Insertedge(5,6,0); \
+    (g).Insertedge(6,7,XOR_); (g).Insertedge(7,8,SH_); (g).Insertedge(7,9,SH_); \
+	(g).Insertedge(7,10,0); (g).Insertedge(10,11,XOR_);(g).Insertedge(11,12,MAS_); \
+	(g).Insertedge(8,10,0); (g).Insertedge(9,10,0);
+
+#define PRESENT(g)                  \
+    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,3,LUT_); (g).Insertedge(3,4,PER_); 
+
+#define MACGUFFIN(g)                  \
+    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,3,LUT_); (g).Insertedge(3,4,XOR_); \
+	(g).Insertedge(4,5,SH_);
+
+#define SQUARE(g)                  \
+    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,3,PER_); (g).Insertedge(3,4,LUT_); \
+	(g).Insertedge(4,5,GFM_);
+
+#define M6(g)                  \
+    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,3,SH_); (g).Insertedge(3,4,MAS_); \
+	(g).Insertedge(4,5,MAS_); (g).Insertedge(5,6,SH_); (g).Insertedge(6,7,MAS_); \
+    (g).Insertedge(7,8,MAS_); (g).Insertedge(8,9,SH_); (g).Insertedge(9,10,MAS_); \
+	(g).Insertedge(10,11,MAS_);
+
+#define ICE(g)                  \
+    (g).Insertedge(1,2,PER_); (g).Insertedge(2,3,PER_); (g).Insertedge(3,4,XOR_); \
+	(g).Insertedge(4,5,LUT_); (g).Insertedge(5,6,PER_); (g).Insertedge(6,7,XOR_); 
+
+#define SHARK(g)                  \
+    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,3,LUT_); (g).Insertedge(3,4,GFM_); 
+
+#define CS_CIPHER(g)                  \
+    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,5,SH_); (g).Insertedge(3,4,XOR_); \
+	(g).Insertedge(4,6,0); (g).Insertedge(5,6,0); (g).Insertedge(5,8,AND_); \
+	(g).Insertedge(8,9,0); (g).Insertedge(5,9,0); (g).Insertedge(9,10,XOR_); \
+	(g).Insertedge(10,11,LUT_); (g).Insertedge(6,7,XOR_); (g).Insertedge(7,12,LUT_); 
+
+#define NUSH(g)                  \
+    (g).Insertedge(1,11,0); (g).Insertedge(2,6,0); (g).Insertedge(3,5,XOR_); \
+	(g).Insertedge(5,6,0); (g).Insertedge(6,7,MAS_); (g).Insertedge(7,8,SH_); \
+	(g).Insertedge(8,9,0); (g).Insertedge(4,9,0); (g).Insertedge(9,10,OR_); \
+	(g).Insertedge(10,11,0); (g).Insertedge(11,12,MAS_); (g).Insertedge(9,13,AND_); \
+	(g).Insertedge(13,11,0);
+	
+#define GRAND_CRU(g)                  \
+    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,3,LUT_); (g).Insertedge(3,4,BR_); \
+	(g).Insertedge(4,5,GFM_); (g).Insertedge(5,6,PER_);
+	
+#define Q(g)                  \
+    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,3,LUT_); (g).Insertedge(3,4,XOR_); \
+	(g).Insertedge(4,5,PER_); (g).Insertedge(5,6,LUT_); (g).Insertedge(6,7,PER_); \
+    (g).Insertedge(7,8,XOR_); (g).Insertedge(8,9,BR_); (g).Insertedge(9,10,PER_); \
+	(g).Insertedge(10,11,LUT_); (g).Insertedge(11,12,PER_);
+	
+#define E2(g)                  \
+    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,3,LUT_); (g).Insertedge(3,4,XOR_); \
+	(g).Insertedge(4,5,XOR_); (g).Insertedge(5,6,XOR_); (g).Insertedge(6,7,XOR_); \
+    (g).Insertedge(7,8,XOR_); (g).Insertedge(8,9,LUT_); 	
+	
+#define KHAZAD(g)                  \
+    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,3,GFM_); (g).Insertedge(3,4,LUT_);
+	
+#define HIEROCRYPT_L1(g)                  \
+    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,3,LUT_); (g).Insertedge(3,4,GFM_); \
+	(g).Insertedge(4,5,XOR_); (g).Insertedge(5,6,LUT_); (g).Insertedge(6,7,GFM_); 
+	
+#define HIEROCRYPT_3(g)                  \
+    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,3,LUT_); (g).Insertedge(3,4,GFM_); \
+	(g).Insertedge(4,5,XOR_); (g).Insertedge(5,6,LUT_); (g).Insertedge(6,7,GFM_); 
+	
+	
 	
 	
 inline void	init_al_graph(ALGraph<int> &g, std::string al_type){
@@ -344,6 +437,128 @@ inline void	init_al_graph(ALGraph<int> &g, std::string al_type){
 	    }
 		SKIPJECT(g);  
 	}
+//******************new added**********************	
+	else if(al_type == "SPECK"){  
+		for(int i = 1; i <= 8; i++){
+		g.InsertVertex(i);
+	    }
+		SPECK(g);  
+	}
+	else if(al_type == "SIMON"){  
+		for(int i = 1; i <= 10; i++){
+		g.InsertVertex(i);
+	    }
+		SIMON(g);  
+	}
+	else if(al_type == "LUCIFER"){  
+		for(int i = 1; i <= 5; i++){
+		g.InsertVertex(i);
+	    }
+		LUCIFER(g);  
+	}
+	else if(al_type == "CLEFIA"){  
+		for(int i = 1; i <= 5; i++){
+		g.InsertVertex(i);
+	    }
+		CLEFIA(g);  
+	}
+	else if(al_type == "ARIA"){  
+		for(int i = 1; i <= 4; i++){
+		g.InsertVertex(i);
+	    }
+		ARIA(g);  
+	}
+	else if(al_type == "C2"){  
+		for(int i = 1; i <= 12; i++){
+		g.InsertVertex(i);
+	    }
+		C2(g);  
+	}
+	else if(al_type == "PRESENT"){  
+		for(int i = 1; i <= 4; i++){
+		g.InsertVertex(i);
+	    }
+		PRESENT(g);  
+	}
+	else if(al_type == "MACGUFFIN"){  
+		for(int i = 1; i <= 5; i++){
+		g.InsertVertex(i);
+	    }
+		MACGUFFIN(g);  
+	}
+	else if(al_type == "SQUARE"){  
+		for(int i = 1; i <= 5; i++){
+		g.InsertVertex(i);
+	    }
+		SQUARE(g);  
+	}
+	else if(al_type == "M6"){  
+		for(int i = 1; i <= 11; i++){
+		g.InsertVertex(i);
+	    }
+		M6(g);  
+	}
+	else if(al_type == "ICE"){  
+		for(int i = 1; i <= 7; i++){
+		g.InsertVertex(i);
+	    }
+		ICE(g);  
+	}
+	else if(al_type == "SHARK"){  
+		for(int i = 1; i <= 4; i++){
+		g.InsertVertex(i);
+	    }
+		SHARK(g);  
+	}
+	else if(al_type == "CS_CIPHER"){  
+		for(int i = 1; i <= 12; i++){
+		g.InsertVertex(i);
+	    }
+		CS_CIPHER(g);  
+	}
+	else if(al_type == "NUSH"){  
+		for(int i = 1; i <= 13; i++){
+		g.InsertVertex(i);
+	    }
+		NUSH(g);  
+	}
+	else if(al_type == "GRAND_CRU"){  
+		for(int i = 1; i <= 6; i++){
+		g.InsertVertex(i);
+	    }
+		GRAND_CRU(g);  
+	}
+	else if(al_type == "Q"){  
+		for(int i = 1; i <= 12; i++){
+		g.InsertVertex(i);
+	    }
+		Q(g);  
+	}
+	else if(al_type == "E2"){  
+		for(int i = 1; i <= 9; i++){
+		g.InsertVertex(i);
+	    }
+		E2(g);  
+	}
+	else if(al_type == "KHAZAD"){  
+		for(int i = 1; i <= 4; i++){
+		g.InsertVertex(i);
+	    }
+		KHAZAD(g);  
+	}
+	else if(al_type == "HIEROCRYPT_L1"){  
+		for(int i = 1; i <= 7; i++){
+		g.InsertVertex(i);
+	    }
+		HIEROCRYPT_L1(g);  
+	}
+	else if(al_type == "HIEROCRYPT_3"){  
+		for(int i = 1; i <= 7; i++){
+		g.InsertVertex(i);
+	    }
+		HIEROCRYPT_3(g);  
+	}
+
 	
 }
 
