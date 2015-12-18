@@ -241,9 +241,9 @@
 
 //*******************************************new added*************************************************
 #define SPECK(g)                  \
-    (g).Insertedge(1,2,BR_); (g).Insertedge(1,3,0);  (g).Insertedge(2,3,0); \
-	(g).Insertedge(3,4,MAS_); (g).Insertedge(4,5,XOR_); (g).Insertedge(5,6,0); \
-    (g).Insertedge(1,8,SH_); (g).Insertedge(8,6,0); (g).Insertedge(6,7,XOR_);
+    (g).Insertedge(1,2,BR_); (g).Insertedge(2,3,0);  (g).Insertedge(1,3,0); \
+	(g).Insertedge(1,4,SH_); (g).Insertedge(3,5,MAS_); (g).Insertedge(5,6,XOR_); \
+    (g).Insertedge(6,7,0); (g).Insertedge(4,7,0); (g).Insertedge(7,8,XOR_);
 
 #define SIMON(g)                  \
     (g).Insertedge(1,2,BR_); (g).Insertedge(1,3,SH_); (g).Insertedge(1,4,SH_); \
@@ -293,18 +293,25 @@
 #define SHARK(g)                  \
     (g).Insertedge(1,2,XOR_); (g).Insertedge(2,3,LUT_); (g).Insertedge(3,4,GFM_); 
 
-#define CS_CIPHER(g)                  \
-    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,5,SH_); (g).Insertedge(3,4,XOR_); \
-	(g).Insertedge(4,6,0); (g).Insertedge(5,6,0); (g).Insertedge(5,8,AND_); \
-	(g).Insertedge(8,9,0); (g).Insertedge(5,9,0); (g).Insertedge(9,10,XOR_); \
-	(g).Insertedge(10,11,LUT_); (g).Insertedge(6,7,XOR_); (g).Insertedge(7,12,LUT_); 
+//#define CS_CIPHER(g)                  \
+//    (g).Insertedge(1,2,XOR_); (g).Insertedge(2,5,SH_); (g).Insertedge(3,4,XOR_); \
+//	(g).Insertedge(4,6,0); (g).Insertedge(5,6,0); (g).Insertedge(5,8,AND_); \
+//	(g).Insertedge(8,9,0); (g).Insertedge(5,9,0); (g).Insertedge(9,10,XOR_); \
+//	(g).Insertedge(10,11,LUT_); (g).Insertedge(6,7,XOR_); (g).Insertedge(7,12,LUT_); 
 
+#define CS_CIPHER(g)                  \
+    (g).Insertedge(1,3,XOR_); (g).Insertedge(2,4,XOR_); (g).Insertedge(3,5,SH_); \
+	(g).Insertedge(4,6,0); (g).Insertedge(5,6,0); (g).Insertedge(5,7,AND_); \
+	(g).Insertedge(6,8,XOR_); (g).Insertedge(5,9,0); (g).Insertedge(7,9,0); \
+	(g).Insertedge(8,10,LUT_); (g).Insertedge(9,11,XOR_); (g).Insertedge(11,12,LUT_); 
+	
+	
 #define NUSH(g)                  \
-    (g).Insertedge(1,11,0); (g).Insertedge(2,6,0); (g).Insertedge(3,5,XOR_); \
+    (g).Insertedge(1,12,0); (g).Insertedge(2,6,0); (g).Insertedge(3,5,XOR_); \
 	(g).Insertedge(5,6,0); (g).Insertedge(6,7,MAS_); (g).Insertedge(7,8,SH_); \
 	(g).Insertedge(8,9,0); (g).Insertedge(4,9,0); (g).Insertedge(9,10,OR_); \
-	(g).Insertedge(10,11,0); (g).Insertedge(11,12,MAS_); (g).Insertedge(9,13,AND_); \
-	(g).Insertedge(13,11,0);
+	(g).Insertedge(9,11,AND_); (g).Insertedge(11,12,0); (g).Insertedge(10,12,0); \
+	(g).Insertedge(12,13,MAS_);
 	
 #define GRAND_CRU(g)                  \
     (g).Insertedge(1,2,XOR_); (g).Insertedge(2,3,LUT_); (g).Insertedge(3,4,BR_); \
