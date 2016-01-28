@@ -7,7 +7,7 @@
 
 //#define NORMALIZE 
 #define GROUP 4
-#define NUM_P 16
+#define NUM_P 36
 
 #define FILEPATH "./data_in_round"
 #define MEASURE_MAX

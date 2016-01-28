@@ -12,7 +12,7 @@
 
 #define NO_SINGLE  0 //0：包含单个 1：不包含单个
 #define LEN 4    //最长的组合（2-5）
-#define TYPE 2   //0:所有组合 1：去除特殊单元级联 2：只有抑或
+#define TYPE 0   //0:所有组合 1：去除特殊单元级联 2：只有抑或
 
 
 
@@ -212,8 +212,6 @@ void print_center_post(std::map<string, set<int>> &mix, string center) {
 	std::multimap<int, std::map<string, set<int>>::iterator> sorted;
 	int s_size = center.size();
 	for (std::map<string, set<int>>::iterator i = mix.begin(); i != mix.end(); i++) {
-		//if ((i->first.size() - int(s_size) - 28) < 0) continue;
-		//if (i->first.substr(i->first.size() - s_size - 28, s_size) == center) {
 		if(i->first.rfind(center)!=string::npos && i->first[i->first.rfind(center)+s_size+1]=='|'){
 #if NO_SINGLE
 			if (i->second.size() == 1) continue;
@@ -458,8 +456,9 @@ void print_al_inf(std::ofstream &out, std::ofstream &out_round, std::ofstream &o
 	al->max_delay_element(maxe);
 	out<<"the max_delay_element is :"<<maxe/1000.0<<"ns"<<endl;	
 //input for k-means
-    out_round<<al->getname()<<" "<<delay/1000.0<<endl;
-    out_al<<al->getname()<<" "<<(delay/1000.0)*(al->getround())<<endl;
+	out_round.flags(std::ios::left);
+	out_round << setw(16) << al->getname() << " " << delay / 1000.0 << endl;
+    out_al << setiosflags(std::ios::left) << setw(16)<<al->getname()<<" "<<(delay/1000.0)*(al->getround())<<endl;
 }
 
 
@@ -665,7 +664,7 @@ int main(){
 
 	
 //***************print mix************
-    do_mix(mix,key_path,1000);
+    do_mix(mix,key_path,1800);
 	print_mix(mix);
 //	print_center(print_center_pre);
 //	print_center(print_center_post);
