@@ -1,0 +1,1390 @@
+*************1.AES****************
+the critical path of AES is:
+LUT -> 
+BR -> 
+GFM -> 
+XOR -> 
+the total delay of a round is :1.45ns
+the max_delay_element is :1.2ns
+
+*************2.DES****************
+the critical path of DES is:
+PER -> 
+XOR -> 
+LUT -> 
+PER -> 
+XOR -> 
+the total delay of a round is :1.64ns
+the max_delay_element is :0.52ns
+
+*************3.IDEA*************
+the critical path of IDEA is:
+MM -> 
+XOR -> 
+MM -> 
+MAS -> 
+MM -> 
+MAS -> 
+XOR -> 
+the total delay of a round is :3.36ns
+the max_delay_element is :0.9ns
+
+*************4.BLOWFISH*************
+the critical path of BLOWFISH is:
+XOR -> 
+LUT -> 
+MAS -> 
+XOR -> 
+MAS -> 
+XOR -> 
+the total delay of a round is :1.24ns
+the max_delay_element is :0.6ns
+
+*************5.CAMELLIA*************
+the critical path of CAMELLIA is:
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+BR -> 
+XOR -> 
+the total delay of a round is :0.89ns
+the max_delay_element is :0.52ns
+
+*************6.CAST128*************
+the critical path of CAST128 is:
+MAS -> 
+SH -> 
+LUT -> 
+XOR -> 
+MAS -> 
+MAS -> 
+XOR -> 
+the total delay of a round is :1.721ns
+the max_delay_element is :0.6ns
+
+*************7.GOST*************
+the critical path of GOST is:
+MAS -> 
+LUT -> 
+SH -> 
+XOR -> 
+the total delay of a round is :1.121ns
+the max_delay_element is :0.6ns
+
+*************8.RC5*************
+the critical path of RC5 is:
+XOR -> 
+SH -> 
+MAS -> 
+the total delay of a round is :0.601ns
+the max_delay_element is :0.6ns
+
+*************9.SEED*************
+the critical path of SEED is:
+XOR -> 
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+MAS -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+MAS -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+MAS -> 
+XOR -> 
+the total delay of a round is :3.09ns
+the max_delay_element is :0.6ns
+
+*************10.TWOFISH*************
+the critical path of TWOFISH is:
+XOR -> 
+SH -> 
+LUT -> 
+GFM -> 
+MAS -> 
+MAS -> 
+MAS -> 
+XOR -> 
+the total delay of a round is :2.521ns
+the max_delay_element is :1.2ns
+
+*************11.SM4*************
+the critical path of SM4 is:
+XOR -> 
+XOR -> 
+LUT -> 
+SH -> 
+XOR -> 
+XOR -> 
+XOR -> 
+XOR -> 
+the total delay of a round is :1.151ns
+the max_delay_element is :0.52ns
+
+*************12.RC6*************
+the critical path of RC6 is:
+X2A1 -> 
+MM -> 
+SH -> 
+XOR -> 
+SH -> 
+MAS -> 
+the total delay of a round is :2.072ns
+the max_delay_element is :0.6ns
+
+*************13.SERPENT*************
+the critical path of SERPENT is:
+XOR -> 
+LUT -> 
+SH -> 
+SH -> 
+MAS -> 
+SH -> 
+MAS -> 
+SH -> 
+the total delay of a round is :2.204ns
+the max_delay_element is :0.6ns
+
+*************14.TEA*************
+the critical path of TEA is:
+SH -> 
+XOR -> 
+MAS -> 
+MAS -> 
+XOR -> 
+the total delay of a round is :0.931ns
+the max_delay_element is :0.6ns
+
+*************15.XTEA*************
+the critical path of XTEA is:
+SH -> 
+MAS -> 
+XOR -> 
+MAS -> 
+XOR -> 
+the total delay of a round is :0.931ns
+the max_delay_element is :0.6ns
+
+*************16.SKIPJECT*************
+the critical path of SKIPJECT is:
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+the total delay of a round is :2.68ns
+the max_delay_element is :0.52ns
+
+*************17.SPECK*************
+the critical path of SPECK is:
+BR -> 
+MAS -> 
+XOR -> 
+XOR -> 
+the total delay of a round is :0.46ns
+the max_delay_element is :0.6ns
+
+*************18.SIMON*************
+the critical path of SIMON is:
+SH -> 
+AND -> 
+XOR -> 
+XOR -> 
+XOR -> 
+the total delay of a round is :0.471ns
+the max_delay_element is :0.271ns
+
+*************19.LUCIFER*************
+the critical path of LUCIFER is:
+MAS -> 
+LUT -> 
+XOR -> 
+XOR -> 
+the total delay of a round is :0.91ns
+the max_delay_element is :0.6ns
+
+*************20.CLEFIA*************
+the critical path of CLEFIA is:
+XOR -> 
+LUT -> 
+GFM -> 
+XOR -> 
+the total delay of a round is :1.44ns
+the max_delay_element is :1.2ns
+
+*************21.ARIA*************
+the critical path of ARIA is:
+XOR -> 
+LUT -> 
+GFM -> 
+the total delay of a round is :1.38ns
+the max_delay_element is :1.2ns
+
+*************22.C2*************
+the critical path of C2 is:
+MAS -> 
+XOR -> 
+LUT -> 
+SH -> 
+XOR -> 
+SH -> 
+XOR -> 
+MAS -> 
+the total delay of a round is :1.782ns
+the max_delay_element is :0.6ns
+
+*************23.PRESENT*************
+the critical path of PRESENT is:
+XOR -> 
+LUT -> 
+PER -> 
+the total delay of a round is :1.08ns
+the max_delay_element is :0.52ns
+
+*************24.MACGUFFIN*************
+the critical path of MACGUFFIN is:
+XOR -> 
+LUT -> 
+XOR -> 
+SH -> 
+the total delay of a round is :0.911ns
+the max_delay_element is :0.52ns
+
+*************25.SQUARE*************
+the critical path of SQUARE is:
+XOR -> 
+PER -> 
+LUT -> 
+GFM -> 
+the total delay of a round is :1.88ns
+the max_delay_element is :1.2ns
+
+*************26.M6*************
+the critical path of M6 is:
+XOR -> 
+SH -> 
+MAS -> 
+MAS -> 
+SH -> 
+MAS -> 
+MAS -> 
+SH -> 
+MAS -> 
+MAS -> 
+the total delay of a round is :2.493ns
+the max_delay_element is :0.6ns
+
+*************27.ICE*************
+the critical path of ICE is:
+PER -> 
+PER -> 
+XOR -> 
+LUT -> 
+PER -> 
+XOR -> 
+the total delay of a round is :2.14ns
+the max_delay_element is :0.52ns
+
+*************28.SHARK*************
+the critical path of SHARK is:
+XOR -> 
+LUT -> 
+GFM -> 
+the total delay of a round is :1.38ns
+the max_delay_element is :1.2ns
+
+*************29.CS_CIPHER*************
+the critical path of CS_CIPHER is:
+XOR -> 
+SH -> 
+AND -> 
+XOR -> 
+LUT -> 
+the total delay of a round is :0.931ns
+the max_delay_element is :0.52ns
+
+*************30.NUSH*************
+the critical path of NUSH is:
+XOR -> 
+MAS -> 
+SH -> 
+OR -> 
+MAS -> 
+the total delay of a round is :0.892ns
+the max_delay_element is :0.6ns
+
+*************31.GRAND_CRU*************
+the critical path of GRAND_CRU is:
+XOR -> 
+LUT -> 
+BR -> 
+GFM -> 
+PER -> 
+the total delay of a round is :1.95ns
+the max_delay_element is :1.2ns
+
+*************32.Q*************
+the critical path of Q is:
+XOR -> 
+LUT -> 
+XOR -> 
+PER -> 
+LUT -> 
+PER -> 
+XOR -> 
+BR -> 
+PER -> 
+LUT -> 
+PER -> 
+the total delay of a round is :3.81ns
+the max_delay_element is :0.52ns
+
+*************33.E2*************
+the critical path of E2 is:
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+XOR -> 
+XOR -> 
+LUT -> 
+the total delay of a round is :1.4ns
+the max_delay_element is :0.52ns
+
+*************34.KHAZAD*************
+the critical path of KHAZAD is:
+XOR -> 
+GFM -> 
+LUT -> 
+the total delay of a round is :1.38ns
+the max_delay_element is :1.2ns
+
+*************35.HIEROCRYPT_L1*************
+the critical path of HIEROCRYPT_L1 is:
+XOR -> 
+LUT -> 
+GFM -> 
+XOR -> 
+LUT -> 
+GFM -> 
+the total delay of a round is :2.76ns
+the max_delay_element is :1.2ns
+
+*************36.HIEROCRYPT_3*************
+the critical path of HIEROCRYPT_3 is:
+XOR -> 
+LUT -> 
+GFM -> 
+XOR -> 
+LUT -> 
+GFM -> 
+the total delay of a round is :2.76ns
+the max_delay_element is :1.2ns
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:270
+error element,the delay is:800
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:270
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+error element,the delay is:800
+组合类型:     | the delay is: 1.610000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型:    XOR | the delay is: 0.870000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型:    | the delay is: 0.810000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型:    | the delay is: 1.340000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型:   SH  | the delay is: 1.081000 ns
+算法个数: 1 分别是：
+M6 
+组合类型:   SH | the delay is: 0.811000 ns
+算法个数: 1 分别是：
+M6 
+组合类型:   XOR  | the delay is: 0.870000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型:   XOR LUT | the delay is: 1.120000 ns
+算法个数: 1 分别是：
+C2 
+组合类型:   XOR SH | the delay is: 0.871000 ns
+算法个数: 2 分别是：
+TEA M6 
+组合类型:   XOR XOR | the delay is: 0.660000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型:   XOR | the delay is: 0.600000 ns
+算法个数: 5 分别是：
+CAST128 TWOFISH TEA C2 M6 
+组合类型:   | the delay is: 0.540000 ns
+算法个数: 5 分别是：
+CAST128 TWOFISH TEA C2 M6 
+组合类型:   | the delay is: 1.070000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型:  LUT SH XOR | the delay is: 1.121000 ns
+算法个数: 1 分别是：
+GOST 
+组合类型:  LUT SH | the delay is: 1.061000 ns
+算法个数: 1 分别是：
+GOST 
+组合类型:  LUT XOR XOR | the delay is: 0.910000 ns
+算法个数: 2 分别是：
+SEED LUCIFER 
+组合类型:  LUT XOR | the delay is: 0.850000 ns
+算法个数: 2 分别是：
+SEED LUCIFER 
+组合类型:  LUT XOR | the delay is: 1.380000 ns
+算法个数: 1 分别是：
+KHAZAD 
+组合类型:  LUT | the delay is: 0.790000 ns
+算法个数: 3 分别是：
+GOST SEED LUCIFER 
+组合类型:  LUT | the delay is: 1.320000 ns
+算法个数: 1 分别是：
+KHAZAD 
+组合类型:  MM  XOR | the delay is: 1.500000 ns
+算法个数: 1 分别是：
+IDEA 
+组合类型:  MM  | the delay is: 1.440000 ns
+算法个数: 1 分别是：
+IDEA 
+组合类型:  MM | the delay is: 1.170000 ns
+算法个数: 1 分别是：
+IDEA 
+组合类型:  PER XOR | the delay is: 1.360000 ns
+算法个数: 1 分别是：
+GRAND_CRU 
+组合类型:  PER | the delay is: 1.300000 ns
+算法个数: 1 分别是：
+GRAND_CRU 
+组合类型:  SH   | the delay is: 1.081000 ns
+算法个数: 1 分别是：
+M6 
+组合类型:  SH  SH | the delay is: 1.082000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型:  SH  | the delay is: 0.811000 ns
+算法个数: 2 分别是：
+SERPENT M6 
+组合类型:  SH LUT XOR | the delay is: 1.121000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型:  SH LUT | the delay is: 1.061000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型:  SH OR  | the delay is: 0.832000 ns
+算法个数: 1 分别是：
+NUSH 
+组合类型:  SH OR | the delay is: 0.562000 ns
+算法个数: 1 分别是：
+NUSH 
+组合类型:  SH XOR LUT | the delay is: 1.121000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型:  SH XOR | the delay is: 0.601000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型:  SH | the delay is: 0.541000 ns
+算法个数: 4 分别是：
+CAST128 SERPENT M6 NUSH 
+组合类型:  X2A1 MM SH | the delay is: 1.741000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型:  X2A1 MM | the delay is: 1.470000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型:  X2A1 | the delay is: 0.570000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型:  XOR  SH | the delay is: 0.871000 ns
+算法个数: 2 分别是：
+CAST128 NUSH 
+组合类型:  XOR  XOR | the delay is: 0.660000 ns
+算法个数: 2 分别是：
+BLOWFISH XTEA 
+组合类型:  XOR  | the delay is: 0.600000 ns
+算法个数: 4 分别是：
+BLOWFISH CAST128 XTEA NUSH 
+组合类型:  XOR LUT BR | the delay is: 1.450000 ns
+算法个数: 1 分别是：
+AES 
+组合类型:  XOR LUT SH | the delay is: 1.121000 ns
+算法个数: 1 分别是：
+C2 
+组合类型:  XOR LUT | the delay is: 0.850000 ns
+算法个数: 1 分别是：
+C2 
+组合类型:  XOR LUT | the delay is: 1.380000 ns
+算法个数: 5 分别是：
+AES ARIA SHARK HIEROCRYPT_L1 HIEROCRYPT_3 
+组合类型:  XOR MM XOR | the delay is: 1.290000 ns
+算法个数: 1 分别是：
+IDEA 
+组合类型:  XOR MM | the delay is: 1.230000 ns
+算法个数: 1 分别是：
+IDEA 
+组合类型:  XOR PER | the delay is: 1.360000 ns
+算法个数: 1 分别是：
+SQUARE 
+组合类型:  XOR SH  | the delay is: 0.871000 ns
+算法个数: 2 分别是：
+XTEA M6 
+组合类型:  XOR SH XOR | the delay is: 0.661000 ns
+算法个数: 1 分别是：
+TEA 
+组合类型:  XOR SH | the delay is: 0.601000 ns
+算法个数: 4 分别是：
+RC5 TEA XTEA M6 
+组合类型:  XOR XOR BR | the delay is: 0.460000 ns
+算法个数: 1 分别是：
+SPECK 
+组合类型:  XOR XOR LUT | the delay is: 0.910000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型:  XOR XOR LUT | the delay is: 1.440000 ns
+算法个数: 1 分别是：
+CLEFIA 
+组合类型:  XOR XOR SH | the delay is: 0.661000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型:  XOR XOR XOR | the delay is: 0.450000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型:  XOR XOR | the delay is: 0.390000 ns
+算法个数: 4 分别是：
+BLOWFISH SEED TWOFISH SPECK 
+组合类型:  XOR XOR | the delay is: 0.920000 ns
+算法个数: 1 分别是：
+CLEFIA 
+组合类型:  XOR | the delay is: 0.330000 ns
+算法个数: 12 分别是：
+IDEA BLOWFISH CAST128 RC5 SEED TWOFISH TEA XTEA SPECK C2 M6 NUSH 
+组合类型:  XOR | the delay is: 0.860000 ns
+算法个数: 7 分别是：
+AES CLEFIA ARIA SQUARE SHARK HIEROCRYPT_L1 HIEROCRYPT_3 
+组合类型:  | the delay is: 0.270000 ns
+算法个数: 16 分别是：
+IDEA BLOWFISH CAST128 GOST RC5 SEED TWOFISH RC6 SERPENT TEA XTEA SPECK LUCIFER C2 M6 NUSH 
+组合类型:  | the delay is: 0.800000 ns
+算法个数: 10 分别是：
+AES TWOFISH CLEFIA ARIA SQUARE SHARK GRAND_CRU KHAZAD HIEROCRYPT_L1 HIEROCRYPT_3 
+组合类型: AND XOR LUT XOR | the delay is: 0.660000 ns
+算法个数: 1 分别是：
+CS_CIPHER 
+组合类型: AND XOR LUT | the delay is: 0.600000 ns
+算法个数: 1 分别是：
+CS_CIPHER 
+组合类型: AND XOR XOR XOR | the delay is: 0.200000 ns
+算法个数: 1 分别是：
+SIMON 
+组合类型: AND XOR XOR | the delay is: 0.140000 ns
+算法个数: 1 分别是：
+SIMON 
+组合类型: AND XOR | the delay is: 0.080000 ns
+算法个数: 2 分别是：
+SIMON CS_CIPHER 
+组合类型: AND | the delay is: 0.020000 ns
+算法个数: 2 分别是：
+SIMON CS_CIPHER 
+组合类型: BR  PER XOR | the delay is: 1.430000 ns
+算法个数: 1 分别是：
+GRAND_CRU 
+组合类型: BR  PER | the delay is: 1.370000 ns
+算法个数: 1 分别是：
+GRAND_CRU 
+组合类型: BR  XOR LUT | the delay is: 1.450000 ns
+算法个数: 1 分别是：
+AES 
+组合类型: BR  XOR XOR | the delay is: 0.460000 ns
+算法个数: 1 分别是：
+SPECK 
+组合类型: BR  XOR | the delay is: 0.400000 ns
+算法个数: 1 分别是：
+SPECK 
+组合类型: BR  XOR | the delay is: 0.930000 ns
+算法个数: 1 分别是：
+AES 
+组合类型: BR  | the delay is: 0.340000 ns
+算法个数: 1 分别是：
+SPECK 
+组合类型: BR  | the delay is: 0.870000 ns
+算法个数: 2 分别是：
+AES GRAND_CRU 
+组合类型: BR PER LUT PER | the delay is: 1.590000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: BR PER LUT | the delay is: 1.090000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: BR PER | the delay is: 0.570000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: BR XOR XOR LUT | the delay is: 0.710000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: BR XOR XOR | the delay is: 0.190000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: BR XOR | the delay is: 0.130000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: BR | the delay is: 0.070000 ns
+算法个数: 5 分别是：
+AES CAMELLIA SPECK GRAND_CRU Q 
+组合类型: LUT   | the delay is: 1.590000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: LUT  XOR  | the delay is: 1.120000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: LUT  XOR XOR | the delay is: 1.440000 ns
+算法个数: 1 分别是：
+CLEFIA 
+组合类型: LUT  XOR | the delay is: 0.850000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: LUT  XOR | the delay is: 1.380000 ns
+算法个数: 6 分别是：
+CLEFIA ARIA SQUARE SHARK HIEROCRYPT_L1 HIEROCRYPT_3 
+组合类型: LUT  | the delay is: 0.790000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: LUT  | the delay is: 1.320000 ns
+算法个数: 7 分别是：
+TWOFISH CLEFIA ARIA SQUARE SHARK HIEROCRYPT_L1 HIEROCRYPT_3 
+组合类型: LUT BR  XOR | the delay is: 1.450000 ns
+算法个数: 1 分别是：
+AES 
+组合类型: LUT BR  | the delay is: 1.390000 ns
+算法个数: 2 分别是：
+AES GRAND_CRU 
+组合类型: LUT BR | the delay is: 0.590000 ns
+算法个数: 2 分别是：
+AES GRAND_CRU 
+组合类型: LUT PER XOR BR | the delay is: 1.150000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: LUT PER XOR LUT | the delay is: 1.600000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: LUT PER XOR PER | the delay is: 1.580000 ns
+算法个数: 2 分别是：
+DES ICE 
+组合类型: LUT PER XOR | the delay is: 1.080000 ns
+算法个数: 4 分别是：
+DES PRESENT ICE Q 
+组合类型: LUT PER | the delay is: 1.020000 ns
+算法个数: 4 分别是：
+DES PRESENT ICE Q 
+组合类型: LUT SH SH  | the delay is: 1.332000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: LUT SH SH | the delay is: 1.062000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: LUT SH XOR  | the delay is: 1.121000 ns
+算法个数: 1 分别是：
+GOST 
+组合类型: LUT SH XOR SH | the delay is: 1.122000 ns
+算法个数: 1 分别是：
+C2 
+组合类型: LUT SH XOR XOR | the delay is: 0.911000 ns
+算法个数: 1 分别是：
+SM4 
+组合类型: LUT SH XOR | the delay is: 0.851000 ns
+算法个数: 3 分别是：
+GOST SM4 C2 
+组合类型: LUT SH | the delay is: 0.791000 ns
+算法个数: 4 分别是：
+GOST SM4 SERPENT C2 
+组合类型: LUT XOR   | the delay is: 1.120000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: LUT XOR  | the delay is: 0.850000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: LUT XOR  | the delay is: 1.380000 ns
+算法个数: 1 分别是：
+KHAZAD 
+组合类型: LUT XOR LUT XOR | the delay is: 1.160000 ns
+算法个数: 1 分别是：
+E2 
+组合类型: LUT XOR LUT | the delay is: 1.100000 ns
+算法个数: 1 分别是：
+E2 
+组合类型: LUT XOR PER LUT | the delay is: 1.600000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: LUT XOR PER | the delay is: 1.080000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: LUT XOR SH AND | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+CS_CIPHER 
+组合类型: LUT XOR SH XOR | the delay is: 0.911000 ns
+算法个数: 1 分别是：
+MACGUFFIN 
+组合类型: LUT XOR SH | the delay is: 0.851000 ns
+算法个数: 2 分别是：
+MACGUFFIN CS_CIPHER 
+组合类型: LUT XOR XOR  | the delay is: 0.910000 ns
+算法个数: 1 分别是：
+LUCIFER 
+组合类型: LUT XOR XOR LUT | the delay is: 1.160000 ns
+算法个数: 1 分别是：
+SKIPJECT 
+组合类型: LUT XOR XOR XOR | the delay is: 0.700000 ns
+算法个数: 4 分别是：
+CAMELLIA SEED SKIPJECT E2 
+组合类型: LUT XOR XOR | the delay is: 0.640000 ns
+算法个数: 5 分别是：
+CAMELLIA SEED SKIPJECT LUCIFER E2 
+组合类型: LUT XOR | the delay is: 0.580000 ns
+算法个数: 10 分别是：
+CAMELLIA CAST128 SEED SKIPJECT LUCIFER MACGUFFIN CS_CIPHER Q E2 KHAZAD 
+组合类型: LUT | the delay is: 0.520000 ns
+算法个数: 27 分别是：
+AES DES BLOWFISH CAMELLIA CAST128 GOST SEED TWOFISH SM4 SERPENT SKIPJECT LUCIFER CLEFIA ARIA C2 PRESENT MACGUFFIN SQUARE ICE SHARK CS_CIPHER GRAND_CRU Q E2 KHAZAD HIEROCRYPT_L1 HIEROCRYPT_3 
+组合类型: MM  XOR | the delay is: 1.230000 ns
+算法个数: 1 分别是：
+IDEA 
+组合类型: MM  | the delay is: 1.170000 ns
+算法个数: 1 分别是：
+IDEA 
+组合类型: MM SH XOR SH | the delay is: 1.502000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: MM SH XOR | the delay is: 1.231000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: MM SH | the delay is: 1.171000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: MM XOR | the delay is: 0.960000 ns
+算法个数: 1 分别是：
+IDEA 
+组合类型: MM | the delay is: 0.900000 ns
+算法个数: 2 分别是：
+IDEA RC6 
+组合类型: OR  XOR  | the delay is: 0.621000 ns
+算法个数: 1 分别是：
+NUSH 
+组合类型: OR  XOR | the delay is: 0.351000 ns
+算法个数: 1 分别是：
+NUSH 
+组合类型: OR  | the delay is: 0.291000 ns
+算法个数: 1 分别是：
+NUSH 
+组合类型: OR | the delay is: 0.021000 ns
+算法个数: 1 分别是：
+NUSH 
+组合类型: PER LUT PER XOR | the delay is: 1.580000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: PER LUT PER | the delay is: 1.520000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: PER LUT | the delay is: 1.020000 ns
+算法个数: 2 分别是：
+SQUARE Q 
+组合类型: PER PER XOR LUT | the delay is: 1.580000 ns
+算法个数: 1 分别是：
+ICE 
+组合类型: PER PER XOR | the delay is: 1.060000 ns
+算法个数: 1 分别是：
+ICE 
+组合类型: PER PER | the delay is: 1.000000 ns
+算法个数: 1 分别是：
+ICE 
+组合类型: PER XOR BR PER | the delay is: 1.130000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: PER XOR BR | the delay is: 0.630000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: PER XOR LUT BR | the delay is: 1.150000 ns
+算法个数: 1 分别是：
+GRAND_CRU 
+组合类型: PER XOR LUT PER | the delay is: 1.580000 ns
+算法个数: 2 分别是：
+DES ICE 
+组合类型: PER XOR LUT XOR | the delay is: 1.140000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: PER XOR LUT | the delay is: 1.080000 ns
+算法个数: 5 分别是：
+DES PRESENT ICE GRAND_CRU Q 
+组合类型: PER XOR PER PER | the delay is: 1.560000 ns
+算法个数: 1 分别是：
+ICE 
+组合类型: PER XOR PER XOR | the delay is: 1.120000 ns
+算法个数: 1 分别是：
+DES 
+组合类型: PER XOR PER | the delay is: 1.060000 ns
+算法个数: 2 分别是：
+DES ICE 
+组合类型: PER XOR | the delay is: 0.560000 ns
+算法个数: 5 分别是：
+DES PRESENT ICE GRAND_CRU Q 
+组合类型: PER | the delay is: 0.500000 ns
+算法个数: 6 分别是：
+DES PRESENT SQUARE ICE GRAND_CRU Q 
+组合类型: SH   SH | the delay is: 1.082000 ns
+算法个数: 1 分别是：
+M6 
+组合类型: SH   XOR | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+M6 
+组合类型: SH   | the delay is: 0.811000 ns
+算法个数: 1 分别是：
+M6 
+组合类型: SH  SH  | the delay is: 1.082000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH  SH XOR | the delay is: 0.872000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH  SH | the delay is: 0.812000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH  X2A1 MM | the delay is: 1.741000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: SH  X2A1 | the delay is: 0.841000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: SH  XOR  | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+XTEA 
+组合类型: SH  XOR | the delay is: 0.601000 ns
+算法个数: 2 分别是：
+RC5 XTEA 
+组合类型: SH  | the delay is: 0.541000 ns
+算法个数: 5 分别是：
+RC5 RC6 SERPENT XTEA M6 
+组合类型: SH AND XOR LUT | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+CS_CIPHER 
+组合类型: SH AND XOR XOR | the delay is: 0.411000 ns
+算法个数: 1 分别是：
+SIMON 
+组合类型: SH AND XOR | the delay is: 0.351000 ns
+算法个数: 2 分别是：
+SIMON CS_CIPHER 
+组合类型: SH AND | the delay is: 0.291000 ns
+算法个数: 2 分别是：
+SIMON CS_CIPHER 
+组合类型: SH LUT  | the delay is: 1.591000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: SH LUT XOR  | the delay is: 1.121000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: SH LUT XOR | the delay is: 0.851000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: SH LUT | the delay is: 0.791000 ns
+算法个数: 2 分别是：
+CAST128 TWOFISH 
+组合类型: SH OR  XOR | the delay is: 0.622000 ns
+算法个数: 1 分别是：
+NUSH 
+组合类型: SH OR  | the delay is: 0.562000 ns
+算法个数: 1 分别是：
+NUSH 
+组合类型: SH OR | the delay is: 0.292000 ns
+算法个数: 1 分别是：
+NUSH 
+组合类型: SH SH  SH | the delay is: 1.083000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH SH  | the delay is: 0.812000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH SH | the delay is: 0.542000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH XOR   | the delay is: 0.871000 ns
+算法个数: 2 分别是：
+TEA C2 
+组合类型: SH XOR  LUT | the delay is: 1.121000 ns
+算法个数: 1 分别是：
+GOST 
+组合类型: SH XOR  | the delay is: 0.601000 ns
+算法个数: 3 分别是：
+GOST TEA C2 
+组合类型: SH XOR LUT SH | the delay is: 1.122000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH XOR LUT XOR | the delay is: 0.911000 ns
+算法个数: 1 分别是：
+MACGUFFIN 
+组合类型: SH XOR LUT | the delay is: 0.851000 ns
+算法个数: 2 分别是：
+SERPENT MACGUFFIN 
+组合类型: SH XOR SH  | the delay is: 0.872000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: SH XOR SH XOR | the delay is: 0.662000 ns
+算法个数: 1 分别是：
+C2 
+组合类型: SH XOR SH | the delay is: 0.602000 ns
+算法个数: 2 分别是：
+RC6 C2 
+组合类型: SH XOR XOR XOR | the delay is: 0.451000 ns
+算法个数: 1 分别是：
+SM4 
+组合类型: SH XOR XOR | the delay is: 0.391000 ns
+算法个数: 1 分别是：
+SM4 
+组合类型: SH XOR | the delay is: 0.331000 ns
+算法个数: 7 分别是：
+GOST SM4 RC6 SERPENT TEA C2 MACGUFFIN 
+组合类型: SH | the delay is: 0.271000 ns
+算法个数: 15 分别是：
+CAST128 GOST RC5 TWOFISH SM4 RC6 SERPENT TEA XTEA SIMON C2 MACGUFFIN M6 CS_CIPHER NUSH 
+组合类型: X2A1 MM SH XOR | the delay is: 1.531000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: X2A1 MM SH | the delay is: 1.471000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: X2A1 MM | the delay is: 1.200000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: X2A1 | the delay is: 0.300000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: XOR   XOR | the delay is: 0.660000 ns
+算法个数: 3 分别是：
+CAST128 TEA C2 
+组合类型: XOR   | the delay is: 0.600000 ns
+算法个数: 3 分别是：
+CAST128 TEA C2 
+组合类型: XOR  LUT SH | the delay is: 1.121000 ns
+算法个数: 1 分别是：
+GOST 
+组合类型: XOR  LUT XOR | the delay is: 0.910000 ns
+算法个数: 2 分别是：
+SEED LUCIFER 
+组合类型: XOR  LUT | the delay is: 0.850000 ns
+算法个数: 3 分别是：
+GOST SEED LUCIFER 
+组合类型: XOR  LUT | the delay is: 1.380000 ns
+算法个数: 1 分别是：
+KHAZAD 
+组合类型: XOR  SH LUT | the delay is: 1.121000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: XOR  SH OR | the delay is: 0.622000 ns
+算法个数: 1 分别是：
+NUSH 
+组合类型: XOR  SH | the delay is: 0.601000 ns
+算法个数: 2 分别是：
+CAST128 NUSH 
+组合类型: XOR  XOR SH | the delay is: 0.661000 ns
+算法个数: 1 分别是：
+XTEA 
+组合类型: XOR  XOR XOR | the delay is: 0.450000 ns
+算法个数: 2 分别是：
+BLOWFISH SEED 
+组合类型: XOR  XOR | the delay is: 0.390000 ns
+算法个数: 3 分别是：
+BLOWFISH SEED XTEA 
+组合类型: XOR  | the delay is: 0.330000 ns
+算法个数: 9 分别是：
+BLOWFISH CAST128 GOST SEED TEA XTEA LUCIFER C2 NUSH 
+组合类型: XOR  | the delay is: 0.860000 ns
+算法个数: 1 分别是：
+KHAZAD 
+组合类型: XOR BR  XOR | the delay is: 0.460000 ns
+算法个数: 1 分别是：
+SPECK 
+组合类型: XOR BR  | the delay is: 0.400000 ns
+算法个数: 1 分别是：
+SPECK 
+组合类型: XOR BR PER LUT | the delay is: 1.150000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: XOR BR PER | the delay is: 0.630000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: XOR BR XOR XOR | the delay is: 0.250000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: XOR BR XOR | the delay is: 0.190000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: XOR BR | the delay is: 0.130000 ns
+算法个数: 3 分别是：
+CAMELLIA SPECK Q 
+组合类型: XOR LUT  XOR | the delay is: 0.910000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: XOR LUT  XOR | the delay is: 1.440000 ns
+算法个数: 3 分别是：
+CLEFIA HIEROCRYPT_L1 HIEROCRYPT_3 
+组合类型: XOR LUT  | the delay is: 0.850000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: XOR LUT  | the delay is: 1.380000 ns
+算法个数: 5 分别是：
+CLEFIA ARIA SHARK HIEROCRYPT_L1 HIEROCRYPT_3 
+组合类型: XOR LUT BR  | the delay is: 1.450000 ns
+算法个数: 2 分别是：
+AES GRAND_CRU 
+组合类型: XOR LUT BR | the delay is: 0.650000 ns
+算法个数: 2 分别是：
+AES GRAND_CRU 
+组合类型: XOR LUT PER XOR | the delay is: 1.140000 ns
+算法个数: 2 分别是：
+DES ICE 
+组合类型: XOR LUT PER | the delay is: 1.080000 ns
+算法个数: 3 分别是：
+DES PRESENT ICE 
+组合类型: XOR LUT SH SH | the delay is: 1.122000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: XOR LUT SH XOR | the delay is: 0.911000 ns
+算法个数: 2 分别是：
+SM4 C2 
+组合类型: XOR LUT SH | the delay is: 0.851000 ns
+算法个数: 3 分别是：
+SM4 SERPENT C2 
+组合类型: XOR LUT XOR LUT | the delay is: 1.160000 ns
+算法个数: 1 分别是：
+E2 
+组合类型: XOR LUT XOR PER | the delay is: 1.140000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: XOR LUT XOR SH | the delay is: 0.911000 ns
+算法个数: 2 分别是：
+MACGUFFIN CS_CIPHER 
+组合类型: XOR LUT XOR XOR | the delay is: 0.700000 ns
+算法个数: 4 分别是：
+CAMELLIA SEED SKIPJECT E2 
+组合类型: XOR LUT XOR | the delay is: 0.640000 ns
+算法个数: 7 分别是：
+CAMELLIA SEED SKIPJECT MACGUFFIN CS_CIPHER Q E2 
+组合类型: XOR LUT | the delay is: 0.580000 ns
+算法个数: 21 分别是：
+AES DES BLOWFISH CAMELLIA SEED SM4 SERPENT SKIPJECT CLEFIA ARIA C2 PRESENT MACGUFFIN ICE SHARK CS_CIPHER GRAND_CRU Q E2 HIEROCRYPT_L1 HIEROCRYPT_3 
+组合类型: XOR MM  | the delay is: 1.230000 ns
+算法个数: 1 分别是：
+IDEA 
+组合类型: XOR MM XOR | the delay is: 1.020000 ns
+算法个数: 1 分别是：
+IDEA 
+组合类型: XOR MM | the delay is: 0.960000 ns
+算法个数: 1 分别是：
+IDEA 
+组合类型: XOR PER LUT PER | the delay is: 1.580000 ns
+算法个数: 1 分别是：
+Q 
+组合类型: XOR PER LUT | the delay is: 1.080000 ns
+算法个数: 2 分别是：
+SQUARE Q 
+组合类型: XOR PER PER XOR | the delay is: 1.120000 ns
+算法个数: 1 分别是：
+ICE 
+组合类型: XOR PER PER | the delay is: 1.060000 ns
+算法个数: 1 分别是：
+ICE 
+组合类型: XOR PER XOR LUT | the delay is: 1.140000 ns
+算法个数: 1 分别是：
+DES 
+组合类型: XOR PER XOR | the delay is: 0.620000 ns
+算法个数: 1 分别是：
+DES 
+组合类型: XOR PER | the delay is: 0.560000 ns
+算法个数: 4 分别是：
+DES SQUARE ICE Q 
+组合类型: XOR SH   | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+M6 
+组合类型: XOR SH  X2A1 | the delay is: 0.901000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: XOR SH  XOR | the delay is: 0.661000 ns
+算法个数: 1 分别是：
+XTEA 
+组合类型: XOR SH  | the delay is: 0.601000 ns
+算法个数: 4 分别是：
+RC5 RC6 XTEA M6 
+组合类型: XOR SH AND XOR | the delay is: 0.411000 ns
+算法个数: 2 分别是：
+SIMON CS_CIPHER 
+组合类型: XOR SH AND | the delay is: 0.351000 ns
+算法个数: 2 分别是：
+SIMON CS_CIPHER 
+组合类型: XOR SH LUT  | the delay is: 1.651000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: XOR SH LUT | the delay is: 0.851000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: XOR SH XOR  | the delay is: 0.661000 ns
+算法个数: 2 分别是：
+TEA C2 
+组合类型: XOR SH XOR LUT | the delay is: 0.911000 ns
+算法个数: 1 分别是：
+MACGUFFIN 
+组合类型: XOR SH XOR | the delay is: 0.391000 ns
+算法个数: 3 分别是：
+TEA C2 MACGUFFIN 
+组合类型: XOR SH | the delay is: 0.331000 ns
+算法个数: 10 分别是：
+RC5 TWOFISH RC6 TEA XTEA SIMON C2 MACGUFFIN M6 CS_CIPHER 
+组合类型: XOR XOR  LUT | the delay is: 0.910000 ns
+算法个数: 2 分别是：
+SEED LUCIFER 
+组合类型: XOR XOR  XOR | the delay is: 0.450000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: XOR XOR  | the delay is: 0.390000 ns
+算法个数: 2 分别是：
+SEED LUCIFER 
+组合类型: XOR XOR BR  | the delay is: 0.460000 ns
+算法个数: 1 分别是：
+SPECK 
+组合类型: XOR XOR BR XOR | the delay is: 0.250000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: XOR XOR BR | the delay is: 0.190000 ns
+算法个数: 2 分别是：
+CAMELLIA SPECK 
+组合类型: XOR XOR LUT  | the delay is: 0.910000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: XOR XOR LUT  | the delay is: 1.440000 ns
+算法个数: 1 分别是：
+CLEFIA 
+组合类型: XOR XOR LUT SH | the delay is: 0.911000 ns
+算法个数: 1 分别是：
+SM4 
+组合类型: XOR XOR LUT XOR | the delay is: 0.700000 ns
+算法个数: 4 分别是：
+CAMELLIA SEED SKIPJECT E2 
+组合类型: XOR XOR LUT | the delay is: 0.640000 ns
+算法个数: 7 分别是：
+BLOWFISH CAMELLIA SEED SM4 SKIPJECT CLEFIA E2 
+组合类型: XOR XOR SH AND | the delay is: 0.411000 ns
+算法个数: 1 分别是：
+SIMON 
+组合类型: XOR XOR SH LUT | the delay is: 0.911000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: XOR XOR SH | the delay is: 0.391000 ns
+算法个数: 2 分别是：
+TWOFISH SIMON 
+组合类型: XOR XOR XOR  | the delay is: 0.450000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: XOR XOR XOR BR | the delay is: 0.250000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: XOR XOR XOR LUT | the delay is: 0.700000 ns
+算法个数: 4 分别是：
+SEED SM4 SKIPJECT E2 
+组合类型: XOR XOR XOR SH | the delay is: 0.451000 ns
+算法个数: 1 分别是：
+SIMON 
+组合类型: XOR XOR XOR XOR | the delay is: 0.240000 ns
+算法个数: 3 分别是：
+SM4 SKIPJECT E2 
+组合类型: XOR XOR XOR | the delay is: 0.180000 ns
+算法个数: 6 分别是：
+CAMELLIA SEED SM4 SKIPJECT SIMON E2 
+组合类型: XOR XOR | the delay is: 0.120000 ns
+算法个数: 11 分别是：
+BLOWFISH CAMELLIA SEED TWOFISH SM4 SKIPJECT SPECK SIMON LUCIFER CLEFIA E2 
+组合类型: XOR | the delay is: 0.060000 ns
+算法个数: 36 分别是：
+AES DES IDEA BLOWFISH CAMELLIA CAST128 GOST RC5 SEED TWOFISH SM4 RC6 SERPENT TEA XTEA SKIPJECT SPECK SIMON LUCIFER CLEFIA ARIA C2 PRESENT MACGUFFIN SQUARE M6 ICE SHARK CS_CIPHER NUSH GRAND_CRU Q E2 KHAZAD HIEROCRYPT_L1 HIEROCRYPT_3 

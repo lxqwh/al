@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="al_base">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEAAAAEIgAAIADAEQAAAAAAAAAAFAAAEAgAAAEAABAA=</HashCode>
+      <FileName>E:\git\al_a\al_base.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="al_protocol">
+    <Position X="4.5" Y="0.5" Width="1.75" />
+    <NestedTypes>
+      <Enum Name="al_protocol::element" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>E:\git\al_a\al_protocol.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="al_protocol::element_area" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>E:\git\al_a\al_protocol.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>E:\git\al_a\al_protocol.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="edgeNode">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAIAAAAAAgAAAAAAIAAAA=</HashCode>
+      <FileName>E:\git\al_a\graph_t.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VertexNode&lt;VertexType&gt;">
+    <Position X="6.5" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAIAAAAAAAAAAAABAAAAAAAAAQEAAAAAA=</HashCode>
+      <FileName>E:\git\al_a\graph_t.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ALGraph&lt;VertexType&gt;">
+    <Position X="9" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="ALGraph&lt;VertexType&gt;::GraphStyle" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>E:\git\al_a\graph_t.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AABAhAEAMAAAAAAAAEYBAAQAAAEUEAAAQAQAEAkAQAg=</HashCode>
+      <FileName>E:\git\al_a\graph_t.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,344 @@
+*************1.AES****************
+the critical path of AES is:
+LUT -> 
+BR -> 
+GF Multiplication -> 
+XOR -> 
+the total delay of a round is :1.45ns
+the max_delay_element is :0.8ns
+
+*************2.DES****************
+the critical path of DES is:
+substitution -> 
+XOR -> 
+LUT -> 
+substitution -> 
+XOR -> 
+the total delay of a round is :1.64ns
+the max_delay_element is :0.52ns
+
+*************3.IDEA*************
+the critical path of IDEA is:
+Modular Multiplication -> 
+XOR -> 
+Modular Multiplication -> 
+Modular add or sub  -> 
+Modular Multiplication -> 
+Modular add or sub  -> 
+XOR -> 
+the total delay of a round is :3.36ns
+the max_delay_element is :0.9ns
+
+*************4.BLOWFISH*************
+the critical path of BLOWFISH is:
+XOR -> 
+LUT -> 
+Modular add or sub  -> 
+XOR -> 
+Modular add or sub  -> 
+XOR -> 
+the total delay of a round is :1.24ns
+the max_delay_element is :0.52ns
+
+*************5.CAMELLIA*************
+the critical path of CAMELLIA is:
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+BR -> 
+XOR -> 
+the total delay of a round is :0.89ns
+the max_delay_element is :0.52ns
+
+*************6.CAST128*************
+the critical path of CAST128 is:
+Modular add or sub  -> 
+Shift -> 
+LUT -> 
+XOR -> 
+Modular add or sub  -> 
+Modular add or sub  -> 
+XOR -> 
+the total delay of a round is :1.721ns
+the max_delay_element is :0.52ns
+
+*************7.GOST*************
+the critical path of GOST is:
+Modular add or sub  -> 
+LUT -> 
+Shift -> 
+XOR -> 
+the total delay of a round is :1.121ns
+the max_delay_element is :0.52ns
+
+*************8.RC5*************
+the critical path of RC5 is:
+XOR -> 
+Shift -> 
+Modular add or sub  -> 
+the total delay of a round is :0.601ns
+the max_delay_element is :0.271ns
+
+*************9.SEED*************
+the critical path of SEED is:
+XOR -> 
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+Modular add or sub  -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+Modular add or sub  -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+Modular add or sub  -> 
+XOR -> 
+the total delay of a round is :3.09ns
+the max_delay_element is :0.52ns
+
+*************10.TWOFISH*************
+the critical path of TWOFISH is:
+XOR -> 
+Shift -> 
+LUT -> 
+GF Multiplication -> 
+Modular add or sub  -> 
+Modular add or sub  -> 
+Modular add or sub  -> 
+XOR -> 
+the total delay of a round is :2.521ns
+the max_delay_element is :0.8ns
+
+*************11.SM4*************
+the critical path of SM4 is:
+XOR -> 
+XOR -> 
+LUT -> 
+Shift -> 
+XOR -> 
+XOR -> 
+XOR -> 
+XOR -> 
+the total delay of a round is :1.151ns
+the max_delay_element is :0.52ns
+
+*************12.RC6*************
+the critical path of RC6 is:
+X2A1 -> 
+Modular Multiplication -> 
+Shift -> 
+XOR -> 
+Shift -> 
+Modular add or sub  -> 
+the total delay of a round is :2.072ns
+the max_delay_element is :0.52ns
+
+*************13.SERPENT*************
+the critical path of SERPENT is:
+XOR -> 
+LUT -> 
+Shift -> 
+Shift -> 
+Modular add or sub  -> 
+Shift -> 
+Modular add or sub  -> 
+Shift -> 
+the total delay of a round is :2.204ns
+the max_delay_element is :0.52ns
+
+*************14.TEA*************
+the critical path of TEA is:
+Shift -> 
+XOR -> 
+Modular add or sub  -> 
+Modular add or sub  -> 
+XOR -> 
+the total delay of a round is :0.931ns
+the max_delay_element is :0.271ns
+
+*************15.XTEA*************
+the critical path of XTEA is:
+Shift -> 
+Modular add or sub  -> 
+XOR -> 
+Modular add or sub  -> 
+XOR -> 
+the total delay of a round is :0.931ns
+the max_delay_element is :0.271ns
+
+*************16.SKIPJECT*************
+the critical path of SKIPJECT is:
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+the total delay of a round is :2.68ns
+the max_delay_element is :0.52ns
+组合类型: BR | the delay is: 0.070000 ns
+算法个数: 2 分别是：
+1 5 
+组合类型: GFM | the delay is: 0.800000 ns
+算法个数: 2 分别是：
+1 10 
+组合类型: LUT SH XOR | the delay is: 0.851000 ns
+算法个数: 2 分别是：
+7 11 
+组合类型: LUT SH | the delay is: 0.791000 ns
+算法个数: 3 分别是：
+7 11 13 
+组合类型: LUT XOR XOR XOR | the delay is: 0.700000 ns
+算法个数: 3 分别是：
+5 9 16 
+组合类型: LUT XOR XOR | the delay is: 0.640000 ns
+算法个数: 3 分别是：
+5 9 16 
+组合类型: LUT XOR | the delay is: 0.580000 ns
+算法个数: 4 分别是：
+5 6 9 16 
+组合类型: LUT | the delay is: 0.520000 ns
+算法个数: 11 分别是：
+1 2 4 5 6 7 9 10 11 13 16 
+组合类型: MAS LUT | the delay is: 0.790000 ns
+算法个数: 2 分别是：
+7 9 
+组合类型: MAS MAS XOR | the delay is: 0.600000 ns
+算法个数: 3 分别是：
+6 10 14 
+组合类型: MAS MAS | the delay is: 0.540000 ns
+算法个数: 3 分别是：
+6 10 14 
+组合类型: MAS SH | the delay is: 0.541000 ns
+算法个数: 2 分别是：
+6 13 
+组合类型: MAS XOR MAS XOR | the delay is: 0.660000 ns
+算法个数: 2 分别是：
+4 15 
+组合类型: MAS XOR MAS | the delay is: 0.600000 ns
+算法个数: 3 分别是：
+4 6 15 
+组合类型: MAS XOR SH | the delay is: 0.601000 ns
+算法个数: 3 分别是：
+8 14 15 
+组合类型: MAS XOR XOR | the delay is: 0.390000 ns
+算法个数: 3 分别是：
+4 9 10 
+组合类型: MAS XOR | the delay is: 0.330000 ns
+算法个数: 8 分别是：
+3 4 6 8 9 10 14 15 
+组合类型: MAS | the delay is: 0.270000 ns
+算法个数: 11 分别是：
+3 4 6 7 8 9 10 12 13 14 15 
+组合类型: MM | the delay is: 0.900000 ns
+算法个数: 2 分别是：
+3 12 
+组合类型: SH LUT | the delay is: 0.791000 ns
+算法个数: 2 分别是：
+6 10 
+组合类型: SH MAS XOR | the delay is: 0.601000 ns
+算法个数: 2 分别是：
+8 15 
+组合类型: SH MAS | the delay is: 0.541000 ns
+算法个数: 4 分别是：
+8 12 13 15 
+组合类型: SH XOR MAS | the delay is: 0.601000 ns
+算法个数: 2 分别是：
+7 14 
+组合类型: SH XOR | the delay is: 0.331000 ns
+算法个数: 5 分别是：
+7 11 12 13 14 
+组合类型: SH | the delay is: 0.271000 ns
+算法个数: 9 分别是：
+6 7 8 10 11 12 13 14 15 
+组合类型: XOR LUT SH | the delay is: 0.851000 ns
+算法个数: 2 分别是：
+11 13 
+组合类型: XOR LUT XOR XOR XOR | the delay is: 0.760000 ns
+算法个数: 3 分别是：
+5 9 16 
+组合类型: XOR LUT XOR XOR | the delay is: 0.700000 ns
+算法个数: 3 分别是：
+5 9 16 
+组合类型: XOR LUT XOR | the delay is: 0.640000 ns
+算法个数: 3 分别是：
+5 9 16 
+组合类型: XOR LUT | the delay is: 0.580000 ns
+算法个数: 8 分别是：
+1 2 4 5 9 11 13 16 
+组合类型: XOR MAS LUT | the delay is: 0.850000 ns
+算法个数: 2 分别是：
+7 9 
+组合类型: XOR MAS MAS XOR | the delay is: 0.660000 ns
+算法个数: 2 分别是：
+6 14 
+组合类型: XOR MAS MAS | the delay is: 0.600000 ns
+算法个数: 2 分别是：
+6 14 
+组合类型: XOR MAS XOR XOR | the delay is: 0.450000 ns
+算法个数: 2 分别是：
+4 9 
+组合类型: XOR MAS XOR | the delay is: 0.390000 ns
+算法个数: 3 分别是：
+4 9 15 
+组合类型: XOR MAS | the delay is: 0.330000 ns
+算法个数: 6 分别是：
+4 6 7 9 14 15 
+组合类型: XOR SH MAS | the delay is: 0.601000 ns
+算法个数: 3 分别是：
+8 12 15 
+组合类型: XOR SH | the delay is: 0.331000 ns
+算法个数: 5 分别是：
+8 10 12 14 15 
+组合类型: XOR XOR LUT XOR XOR XOR | the delay is: 0.820000 ns
+算法个数: 3 分别是：
+5 9 16 
+组合类型: XOR XOR LUT XOR XOR | the delay is: 0.760000 ns
+算法个数: 3 分别是：
+5 9 16 
+组合类型: XOR XOR LUT XOR | the delay is: 0.700000 ns
+算法个数: 3 分别是：
+5 9 16 
+组合类型: XOR XOR LUT | the delay is: 0.640000 ns
+算法个数: 5 分别是：
+4 5 9 11 16 
+组合类型: XOR XOR XOR LUT XOR XOR | the delay is: 0.820000 ns
+算法个数: 2 分别是：
+9 16 
+组合类型: XOR XOR XOR LUT XOR | the delay is: 0.760000 ns
+算法个数: 2 分别是：
+9 16 
+组合类型: XOR XOR XOR LUT | the delay is: 0.700000 ns
+算法个数: 3 分别是：
+9 11 16 
+组合类型: XOR XOR XOR XOR LUT | the delay is: 0.760000 ns
+算法个数: 2 分别是：
+11 16 
+组合类型: XOR XOR XOR XOR | the delay is: 0.240000 ns
+算法个数: 2 分别是：
+11 16 
+组合类型: XOR XOR XOR | the delay is: 0.180000 ns
+算法个数: 4 分别是：
+5 9 11 16 
+组合类型: XOR XOR | the delay is: 0.120000 ns
+算法个数: 6 分别是：
+4 5 9 10 11 16 
+组合类型: XOR | the delay is: 0.060000 ns
+算法个数: 16 分别是：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 

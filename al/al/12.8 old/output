@@ -1,0 +1,1019 @@
+*************1.AES****************
+the critical path of AES is:
+LUT -> 
+BR -> 
+GFM -> 
+XOR -> 
+the total delay of a round is :1.45ns
+the max_delay_element is :0.8ns
+
+*************2.DES****************
+the critical path of DES is:
+SUB -> 
+XOR -> 
+LUT -> 
+SUB -> 
+XOR -> 
+the total delay of a round is :1.64ns
+the max_delay_element is :0.52ns
+
+*************3.IDEA*************
+the critical path of IDEA is:
+MM -> 
+XOR -> 
+MM -> 
+MAS -> 
+MM -> 
+MAS -> 
+XOR -> 
+the total delay of a round is :3.36ns
+the max_delay_element is :0.9ns
+
+*************4.BLOWFISH*************
+the critical path of BLOWFISH is:
+XOR -> 
+LUT -> 
+MAS -> 
+XOR -> 
+MAS -> 
+XOR -> 
+the total delay of a round is :1.24ns
+the max_delay_element is :0.52ns
+
+*************5.CAMELLIA*************
+the critical path of CAMELLIA is:
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+BR -> 
+XOR -> 
+the total delay of a round is :0.89ns
+the max_delay_element is :0.52ns
+
+*************6.CAST128*************
+the critical path of CAST128 is:
+MAS -> 
+SH -> 
+LUT -> 
+XOR -> 
+MAS -> 
+MAS -> 
+XOR -> 
+the total delay of a round is :1.721ns
+the max_delay_element is :0.52ns
+
+*************7.GOST*************
+the critical path of GOST is:
+MAS -> 
+LUT -> 
+SH -> 
+XOR -> 
+the total delay of a round is :1.121ns
+the max_delay_element is :0.52ns
+
+*************8.RC5*************
+the critical path of RC5 is:
+XOR -> 
+SH -> 
+MAS -> 
+the total delay of a round is :0.601ns
+the max_delay_element is :0.271ns
+
+*************9.SEED*************
+the critical path of SEED is:
+XOR -> 
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+MAS -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+MAS -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+MAS -> 
+XOR -> 
+the total delay of a round is :3.09ns
+the max_delay_element is :0.52ns
+
+*************10.TWOFISH*************
+the critical path of TWOFISH is:
+XOR -> 
+SH -> 
+LUT -> 
+GFM -> 
+MAS -> 
+MAS -> 
+MAS -> 
+XOR -> 
+the total delay of a round is :2.521ns
+the max_delay_element is :0.8ns
+
+*************11.SM4*************
+the critical path of SM4 is:
+XOR -> 
+XOR -> 
+LUT -> 
+SH -> 
+XOR -> 
+XOR -> 
+XOR -> 
+XOR -> 
+the total delay of a round is :1.151ns
+the max_delay_element is :0.52ns
+
+*************12.RC6*************
+the critical path of RC6 is:
+X2A1 -> 
+MM -> 
+SH -> 
+XOR -> 
+SH -> 
+MAS -> 
+the total delay of a round is :2.072ns
+the max_delay_element is :0.52ns
+
+*************13.SERPENT*************
+the critical path of SERPENT is:
+XOR -> 
+LUT -> 
+SH -> 
+SH -> 
+MAS -> 
+SH -> 
+MAS -> 
+SH -> 
+the total delay of a round is :2.204ns
+the max_delay_element is :0.52ns
+
+*************14.TEA*************
+the critical path of TEA is:
+SH -> 
+XOR -> 
+MAS -> 
+MAS -> 
+XOR -> 
+the total delay of a round is :0.931ns
+the max_delay_element is :0.271ns
+
+*************15.XTEA*************
+the critical path of XTEA is:
+SH -> 
+MAS -> 
+XOR -> 
+MAS -> 
+XOR -> 
+the total delay of a round is :0.931ns
+the max_delay_element is :0.271ns
+
+*************16.SKIPJECT*************
+the critical path of SKIPJECT is:
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+LUT -> 
+XOR -> 
+XOR -> 
+XOR -> 
+the total delay of a round is :2.68ns
+the max_delay_element is :0.52ns
+组合类型: BR GFM XOR | the delay is: 0.930000 ns
+算法个数: 1 分别是：
+AES 
+组合类型: BR GFM | the delay is: 0.870000 ns
+算法个数: 1 分别是：
+AES 
+组合类型: BR XOR XOR LUT | the delay is: 0.710000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: BR XOR XOR | the delay is: 0.190000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: BR XOR | the delay is: 0.130000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: BR | the delay is: 0.070000 ns
+算法个数: 2 分别是：
+AES CAMELLIA 
+组合类型: GFM XOR | the delay is: 0.860000 ns
+算法个数: 1 分别是：
+AES 
+组合类型: GFM | the delay is: 0.800000 ns
+算法个数: 2 分别是：
+AES TWOFISH 
+组合类型: LUT BR | the delay is: 0.590000 ns
+算法个数: 1 分别是：
+AES 
+组合类型: LUT MAS XOR | the delay is: 0.850000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: LUT MAS | the delay is: 0.790000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: LUT SH XOR XOR | the delay is: 0.911000 ns
+算法个数: 1 分别是：
+SM4 
+组合类型: LUT SH XOR | the delay is: 0.851000 ns
+算法个数: 2 分别是：
+GOST SM4 
+组合类型: LUT SH | the delay is: 0.791000 ns
+算法个数: 3 分别是：
+GOST SM4 SERPENT 
+组合类型: LUT XOR MAS | the delay is: 0.850000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: LUT XOR XOR XOR | the delay is: 0.700000 ns
+算法个数: 3 分别是：
+CAMELLIA SEED SKIPJECT 
+组合类型: LUT XOR XOR | the delay is: 0.640000 ns
+算法个数: 3 分别是：
+CAMELLIA SEED SKIPJECT 
+组合类型: LUT XOR | the delay is: 0.580000 ns
+算法个数: 4 分别是：
+CAMELLIA CAST128 SEED SKIPJECT 
+组合类型: LUT | the delay is: 0.520000 ns
+算法个数: 11 分别是：
+AES DES BLOWFISH CAMELLIA CAST128 GOST SEED TWOFISH SM4 SERPENT SKIPJECT 
+组合类型: MAS LUT XOR XOR | the delay is: 0.910000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: MAS LUT XOR | the delay is: 0.850000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: MAS LUT | the delay is: 0.790000 ns
+算法个数: 2 分别是：
+GOST SEED 
+组合类型: MAS MAS MAS XOR | the delay is: 0.870000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: MAS MAS MAS | the delay is: 0.810000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: MAS MAS XOR MAS | the delay is: 0.870000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: MAS MAS XOR SH | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+TEA 
+组合类型: MAS MAS XOR XOR | the delay is: 0.660000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: MAS MAS XOR | the delay is: 0.600000 ns
+算法个数: 3 分别是：
+CAST128 TWOFISH TEA 
+组合类型: MAS MAS | the delay is: 0.540000 ns
+算法个数: 3 分别是：
+CAST128 TWOFISH TEA 
+组合类型: MAS SH MAS | the delay is: 0.811000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: MAS SH XOR | the delay is: 0.601000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: MAS SH | the delay is: 0.541000 ns
+算法个数: 2 分别是：
+CAST128 SERPENT 
+组合类型: MAS X2A1 | the delay is: 0.570000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: MAS XOR MAS SH | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: MAS XOR MAS XOR | the delay is: 0.660000 ns
+算法个数: 2 分别是：
+BLOWFISH XTEA 
+组合类型: MAS XOR MAS | the delay is: 0.600000 ns
+算法个数: 3 分别是：
+BLOWFISH CAST128 XTEA 
+组合类型: MAS XOR SH MAS | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+XTEA 
+组合类型: MAS XOR SH XOR | the delay is: 0.661000 ns
+算法个数: 1 分别是：
+TEA 
+组合类型: MAS XOR SH | the delay is: 0.601000 ns
+算法个数: 3 分别是：
+RC5 TEA XTEA 
+组合类型: MAS XOR XOR LUT | the delay is: 0.910000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: MAS XOR XOR SH | the delay is: 0.661000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: MAS XOR XOR XOR | the delay is: 0.450000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: MAS XOR XOR | the delay is: 0.390000 ns
+算法个数: 3 分别是：
+BLOWFISH SEED TWOFISH 
+组合类型: MAS XOR | the delay is: 0.330000 ns
+算法个数: 8 分别是：
+IDEA BLOWFISH CAST128 RC5 SEED TWOFISH TEA XTEA 
+组合类型: MAS | the delay is: 0.270000 ns
+算法个数: 11 分别是：
+IDEA BLOWFISH CAST128 GOST RC5 SEED TWOFISH RC6 SERPENT TEA XTEA 
+组合类型: MM XOR | the delay is: 0.960000 ns
+算法个数: 1 分别是：
+IDEA 
+组合类型: MM | the delay is: 0.900000 ns
+算法个数: 2 分别是：
+IDEA RC6 
+组合类型: SH LUT XOR | the delay is: 0.851000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: SH LUT | the delay is: 0.791000 ns
+算法个数: 2 分别是：
+CAST128 TWOFISH 
+组合类型: SH MAS SH XOR | the delay is: 0.872000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH MAS SH | the delay is: 0.812000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH MAS X2A1 | the delay is: 0.841000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: SH MAS XOR MAS | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+XTEA 
+组合类型: SH MAS XOR | the delay is: 0.601000 ns
+算法个数: 2 分别是：
+RC5 XTEA 
+组合类型: SH MAS | the delay is: 0.541000 ns
+算法个数: 4 分别是：
+RC5 RC6 SERPENT XTEA 
+组合类型: SH SH MAS | the delay is: 0.812000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH SH | the delay is: 0.542000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH XOR LUT | the delay is: 0.851000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH XOR MAS MAS | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+TEA 
+组合类型: SH XOR MAS | the delay is: 0.601000 ns
+算法个数: 2 分别是：
+GOST TEA 
+组合类型: SH XOR SH MAS | the delay is: 0.872000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: SH XOR SH | the delay is: 0.602000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: SH XOR XOR XOR | the delay is: 0.451000 ns
+算法个数: 1 分别是：
+SM4 
+组合类型: SH XOR XOR | the delay is: 0.391000 ns
+算法个数: 1 分别是：
+SM4 
+组合类型: SH XOR | the delay is: 0.331000 ns
+算法个数: 5 分别是：
+GOST SM4 RC6 SERPENT TEA 
+组合类型: SH | the delay is: 0.271000 ns
+算法个数: 9 分别是：
+CAST128 GOST RC5 TWOFISH SM4 RC6 SERPENT TEA XTEA 
+组合类型: SUB XOR | the delay is: 0.560000 ns
+算法个数: 1 分别是：
+DES 
+组合类型: SUB | the delay is: 0.500000 ns
+算法个数: 1 分别是：
+DES 
+组合类型: X2A1 | the delay is: 0.300000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: XOR BR XOR XOR | the delay is: 0.250000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: XOR BR XOR | the delay is: 0.190000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: XOR BR | the delay is: 0.130000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: XOR LUT BR | the delay is: 0.650000 ns
+算法个数: 1 分别是：
+AES 
+组合类型: XOR LUT MAS XOR | the delay is: 0.910000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: XOR LUT MAS | the delay is: 0.850000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: XOR LUT SH XOR | the delay is: 0.911000 ns
+算法个数: 1 分别是：
+SM4 
+组合类型: XOR LUT SH | the delay is: 0.851000 ns
+算法个数: 2 分别是：
+SM4 SERPENT 
+组合类型: XOR LUT XOR XOR | the delay is: 0.700000 ns
+算法个数: 3 分别是：
+CAMELLIA SEED SKIPJECT 
+组合类型: XOR LUT XOR | the delay is: 0.640000 ns
+算法个数: 3 分别是：
+CAMELLIA SEED SKIPJECT 
+组合类型: XOR LUT | the delay is: 0.580000 ns
+算法个数: 8 分别是：
+AES DES BLOWFISH CAMELLIA SEED SM4 SERPENT SKIPJECT 
+组合类型: XOR MAS LUT XOR | the delay is: 0.910000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: XOR MAS LUT | the delay is: 0.850000 ns
+算法个数: 2 分别是：
+GOST SEED 
+组合类型: XOR MAS MAS XOR | the delay is: 0.660000 ns
+算法个数: 2 分别是：
+CAST128 TEA 
+组合类型: XOR MAS MAS | the delay is: 0.600000 ns
+算法个数: 2 分别是：
+CAST128 TEA 
+组合类型: XOR MAS SH | the delay is: 0.601000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: XOR MAS XOR SH | the delay is: 0.661000 ns
+算法个数: 1 分别是：
+XTEA 
+组合类型: XOR MAS XOR XOR | the delay is: 0.450000 ns
+算法个数: 2 分别是：
+BLOWFISH SEED 
+组合类型: XOR MAS XOR | the delay is: 0.390000 ns
+算法个数: 3 分别是：
+BLOWFISH SEED XTEA 
+组合类型: XOR MAS | the delay is: 0.330000 ns
+算法个数: 6 分别是：
+BLOWFISH CAST128 GOST SEED TEA XTEA 
+组合类型: XOR MM | the delay is: 0.960000 ns
+算法个数: 1 分别是：
+IDEA 
+组合类型: XOR SH LUT | the delay is: 0.851000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: XOR SH MAS X2A1 | the delay is: 0.901000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: XOR SH MAS XOR | the delay is: 0.661000 ns
+算法个数: 1 分别是：
+XTEA 
+组合类型: XOR SH MAS | the delay is: 0.601000 ns
+算法个数: 3 分别是：
+RC5 RC6 XTEA 
+组合类型: XOR SH XOR MAS | the delay is: 0.661000 ns
+算法个数: 1 分别是：
+TEA 
+组合类型: XOR SH XOR | the delay is: 0.391000 ns
+算法个数: 1 分别是：
+TEA 
+组合类型: XOR SH | the delay is: 0.331000 ns
+算法个数: 5 分别是：
+RC5 TWOFISH RC6 TEA XTEA 
+组合类型: XOR SUB XOR | the delay is: 0.620000 ns
+算法个数: 1 分别是：
+DES 
+组合类型: XOR SUB | the delay is: 0.560000 ns
+算法个数: 1 分别是：
+DES 
+组合类型: XOR XOR BR XOR | the delay is: 0.250000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: XOR XOR BR | the delay is: 0.190000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: XOR XOR LUT MAS | the delay is: 0.910000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: XOR XOR LUT SH | the delay is: 0.911000 ns
+算法个数: 1 分别是：
+SM4 
+组合类型: XOR XOR LUT XOR | the delay is: 0.700000 ns
+算法个数: 3 分别是：
+CAMELLIA SEED SKIPJECT 
+组合类型: XOR XOR LUT | the delay is: 0.640000 ns
+算法个数: 5 分别是：
+BLOWFISH CAMELLIA SEED SM4 SKIPJECT 
+组合类型: XOR XOR MAS LUT | the delay is: 0.910000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: XOR XOR MAS XOR | the delay is: 0.450000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: XOR XOR MAS | the delay is: 0.390000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: XOR XOR SH LUT | the delay is: 0.911000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: XOR XOR SH | the delay is: 0.391000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: XOR XOR XOR BR | the delay is: 0.250000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: XOR XOR XOR LUT | the delay is: 0.700000 ns
+算法个数: 3 分别是：
+SEED SM4 SKIPJECT 
+组合类型: XOR XOR XOR MAS | the delay is: 0.450000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: XOR XOR XOR XOR | the delay is: 0.240000 ns
+算法个数: 2 分别是：
+SM4 SKIPJECT 
+组合类型: XOR XOR XOR | the delay is: 0.180000 ns
+算法个数: 4 分别是：
+CAMELLIA SEED SM4 SKIPJECT 
+组合类型: XOR XOR | the delay is: 0.120000 ns
+算法个数: 6 分别是：
+BLOWFISH CAMELLIA SEED TWOFISH SM4 SKIPJECT 
+组合类型: XOR | the delay is: 0.060000 ns
+算法个数: 16 分别是：
+AES DES IDEA BLOWFISH CAMELLIA CAST128 GOST RC5 SEED TWOFISH SM4 RC6 SERPENT TEA XTEA SKIPJECT 
+
+
+***********SH*********
+组合类型: SH LUT XOR | the delay is: 0.851000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: SH MAS SH XOR | the delay is: 0.872000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH MAS SH | the delay is: 0.812000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH MAS X2A1 | the delay is: 0.841000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: SH MAS XOR MAS | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+XTEA 
+组合类型: SH SH MAS | the delay is: 0.812000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH SH | the delay is: 0.542000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH XOR LUT | the delay is: 0.851000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH XOR MAS MAS | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+TEA 
+组合类型: SH XOR SH MAS | the delay is: 0.872000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: SH XOR SH | the delay is: 0.602000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: SH XOR XOR XOR | the delay is: 0.451000 ns
+算法个数: 1 分别是：
+SM4 
+组合类型: SH XOR XOR | the delay is: 0.391000 ns
+算法个数: 1 分别是：
+SM4 
+组合类型: SH LUT | the delay is: 0.791000 ns
+算法个数: 2 分别是：
+CAST128 TWOFISH 
+组合类型: SH MAS XOR | the delay is: 0.601000 ns
+算法个数: 2 分别是：
+RC5 XTEA 
+组合类型: SH XOR MAS | the delay is: 0.601000 ns
+算法个数: 2 分别是：
+GOST TEA 
+组合类型: SH MAS | the delay is: 0.541000 ns
+算法个数: 4 分别是：
+RC5 RC6 SERPENT XTEA 
+组合类型: SH XOR | the delay is: 0.331000 ns
+算法个数: 5 分别是：
+GOST SM4 RC6 SERPENT TEA 
+组合类型: SH | the delay is: 0.271000 ns
+算法个数: 9 分别是：
+CAST128 GOST RC5 TWOFISH SM4 RC6 SERPENT TEA XTEA 
+
+
+***********MAS*********
+组合类型: MAS LUT XOR XOR | the delay is: 0.910000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: MAS LUT XOR | the delay is: 0.850000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: MAS MAS MAS XOR | the delay is: 0.870000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: MAS MAS MAS | the delay is: 0.810000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: MAS MAS XOR MAS | the delay is: 0.870000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: MAS MAS XOR SH | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+TEA 
+组合类型: MAS MAS XOR XOR | the delay is: 0.660000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: MAS SH MAS | the delay is: 0.811000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: MAS SH XOR | the delay is: 0.601000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: MAS X2A1 | the delay is: 0.570000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: MAS XOR MAS SH | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: MAS XOR SH MAS | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+XTEA 
+组合类型: MAS XOR SH XOR | the delay is: 0.661000 ns
+算法个数: 1 分别是：
+TEA 
+组合类型: MAS XOR XOR LUT | the delay is: 0.910000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: MAS XOR XOR SH | the delay is: 0.661000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: MAS XOR XOR XOR | the delay is: 0.450000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: MAS LUT | the delay is: 0.790000 ns
+算法个数: 2 分别是：
+GOST SEED 
+组合类型: MAS SH | the delay is: 0.541000 ns
+算法个数: 2 分别是：
+CAST128 SERPENT 
+组合类型: MAS XOR MAS XOR | the delay is: 0.660000 ns
+算法个数: 2 分别是：
+BLOWFISH XTEA 
+组合类型: MAS MAS XOR | the delay is: 0.600000 ns
+算法个数: 3 分别是：
+CAST128 TWOFISH TEA 
+组合类型: MAS MAS | the delay is: 0.540000 ns
+算法个数: 3 分别是：
+CAST128 TWOFISH TEA 
+组合类型: MAS XOR MAS | the delay is: 0.600000 ns
+算法个数: 3 分别是：
+BLOWFISH CAST128 XTEA 
+组合类型: MAS XOR SH | the delay is: 0.601000 ns
+算法个数: 3 分别是：
+RC5 TEA XTEA 
+组合类型: MAS XOR XOR | the delay is: 0.390000 ns
+算法个数: 3 分别是：
+BLOWFISH SEED TWOFISH 
+组合类型: MAS XOR | the delay is: 0.330000 ns
+算法个数: 8 分别是：
+IDEA BLOWFISH CAST128 RC5 SEED TWOFISH TEA XTEA 
+组合类型: MAS | the delay is: 0.270000 ns
+算法个数: 11 分别是：
+IDEA BLOWFISH CAST128 GOST RC5 SEED TWOFISH RC6 SERPENT TEA XTEA 
+
+
+***********MM*********
+组合类型: MM XOR | the delay is: 0.960000 ns
+算法个数: 1 分别是：
+IDEA 
+组合类型: MM | the delay is: 0.900000 ns
+算法个数: 2 分别是：
+IDEA RC6 
+
+
+***********LUT*********
+组合类型: LUT BR | the delay is: 0.590000 ns
+算法个数: 1 分别是：
+AES 
+组合类型: LUT MAS XOR | the delay is: 0.850000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: LUT MAS | the delay is: 0.790000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: LUT SH XOR XOR | the delay is: 0.911000 ns
+算法个数: 1 分别是：
+SM4 
+组合类型: LUT XOR MAS | the delay is: 0.850000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: LUT SH XOR | the delay is: 0.851000 ns
+算法个数: 2 分别是：
+GOST SM4 
+组合类型: LUT SH | the delay is: 0.791000 ns
+算法个数: 3 分别是：
+GOST SM4 SERPENT 
+组合类型: LUT XOR XOR XOR | the delay is: 0.700000 ns
+算法个数: 3 分别是：
+CAMELLIA SEED SKIPJECT 
+组合类型: LUT XOR XOR | the delay is: 0.640000 ns
+算法个数: 3 分别是：
+CAMELLIA SEED SKIPJECT 
+组合类型: LUT XOR | the delay is: 0.580000 ns
+算法个数: 4 分别是：
+CAMELLIA CAST128 SEED SKIPJECT 
+组合类型: LUT | the delay is: 0.520000 ns
+算法个数: 11 分别是：
+AES DES BLOWFISH CAMELLIA CAST128 GOST SEED TWOFISH SM4 SERPENT SKIPJECT 
+
+
+***********GFM*********
+组合类型: GFM XOR | the delay is: 0.860000 ns
+算法个数: 1 分别是：
+AES 
+组合类型: GFM | the delay is: 0.800000 ns
+算法个数: 2 分别是：
+AES TWOFISH 
+
+
+***********SUB*********
+组合类型: SUB XOR | the delay is: 0.560000 ns
+算法个数: 1 分别是：
+DES 
+组合类型: SUB | the delay is: 0.500000 ns
+算法个数: 1 分别是：
+DES 
+
+
+***********BR*********
+组合类型: BR GFM XOR | the delay is: 0.930000 ns
+算法个数: 1 分别是：
+AES 
+组合类型: BR GFM | the delay is: 0.870000 ns
+算法个数: 1 分别是：
+AES 
+组合类型: BR XOR XOR LUT | the delay is: 0.710000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: BR XOR XOR | the delay is: 0.190000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: BR XOR | the delay is: 0.130000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: BR | the delay is: 0.070000 ns
+算法个数: 2 分别是：
+AES CAMELLIA 
+
+
+***********SH*********
+组合类型: MAS MAS XOR SH | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+TEA 
+组合类型: MAS XOR MAS SH | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: MAS XOR XOR SH | the delay is: 0.661000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: SH MAS SH | the delay is: 0.812000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH SH | the delay is: 0.542000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH XOR SH | the delay is: 0.602000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: XOR MAS SH | the delay is: 0.601000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: XOR MAS XOR SH | the delay is: 0.661000 ns
+算法个数: 1 分别是：
+XTEA 
+组合类型: XOR XOR LUT SH | the delay is: 0.911000 ns
+算法个数: 1 分别是：
+SM4 
+组合类型: XOR XOR SH | the delay is: 0.391000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: MAS SH | the delay is: 0.541000 ns
+算法个数: 2 分别是：
+CAST128 SERPENT 
+组合类型: XOR LUT SH | the delay is: 0.851000 ns
+算法个数: 2 分别是：
+SM4 SERPENT 
+组合类型: LUT SH | the delay is: 0.791000 ns
+算法个数: 3 分别是：
+GOST SM4 SERPENT 
+组合类型: MAS XOR SH | the delay is: 0.601000 ns
+算法个数: 3 分别是：
+RC5 TEA XTEA 
+组合类型: XOR SH | the delay is: 0.331000 ns
+算法个数: 5 分别是：
+RC5 TWOFISH RC6 TEA XTEA 
+组合类型: SH | the delay is: 0.271000 ns
+算法个数: 9 分别是：
+CAST128 GOST RC5 TWOFISH SM4 RC6 SERPENT TEA XTEA 
+
+
+***********MAS*********
+组合类型: LUT MAS | the delay is: 0.790000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: LUT XOR MAS | the delay is: 0.850000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: MAS MAS MAS | the delay is: 0.810000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: MAS MAS XOR MAS | the delay is: 0.870000 ns
+算法个数: 1 分别是：
+CAST128 
+组合类型: MAS SH MAS | the delay is: 0.811000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: MAS XOR SH MAS | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+XTEA 
+组合类型: SH MAS XOR MAS | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+XTEA 
+组合类型: SH SH MAS | the delay is: 0.812000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: SH XOR MAS MAS | the delay is: 0.871000 ns
+算法个数: 1 分别是：
+TEA 
+组合类型: SH XOR SH MAS | the delay is: 0.872000 ns
+算法个数: 1 分别是：
+RC6 
+组合类型: XOR LUT MAS | the delay is: 0.850000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: XOR SH XOR MAS | the delay is: 0.661000 ns
+算法个数: 1 分别是：
+TEA 
+组合类型: XOR XOR LUT MAS | the delay is: 0.910000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: XOR XOR MAS | the delay is: 0.390000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: XOR XOR XOR MAS | the delay is: 0.450000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: BR | the delay is: 0.070000 ns
+算法个数: 2 分别是：
+AES CAMELLIA 
+组合类型: MM | the delay is: 0.900000 ns
+算法个数: 2 分别是：
+IDEA RC6 
+组合类型: SH XOR MAS | the delay is: 0.601000 ns
+算法个数: 2 分别是：
+GOST TEA 
+组合类型: XOR MAS MAS | the delay is: 0.600000 ns
+算法个数: 2 分别是：
+CAST128 TEA 
+组合类型: MAS MAS | the delay is: 0.540000 ns
+算法个数: 3 分别是：
+CAST128 TWOFISH TEA 
+组合类型: MAS XOR MAS | the delay is: 0.600000 ns
+算法个数: 3 分别是：
+BLOWFISH CAST128 XTEA 
+组合类型: XOR SH MAS | the delay is: 0.601000 ns
+算法个数: 3 分别是：
+RC5 RC6 XTEA 
+组合类型: SH MAS | the delay is: 0.541000 ns
+算法个数: 4 分别是：
+RC5 RC6 SERPENT XTEA 
+组合类型: XOR MAS | the delay is: 0.330000 ns
+算法个数: 6 分别是：
+BLOWFISH CAST128 GOST SEED TEA XTEA 
+组合类型: SH | the delay is: 0.271000 ns
+算法个数: 9 分别是：
+CAST128 GOST RC5 TWOFISH SM4 RC6 SERPENT TEA XTEA 
+组合类型: MAS | the delay is: 0.270000 ns
+算法个数: 11 分别是：
+IDEA BLOWFISH CAST128 GOST RC5 SEED TWOFISH RC6 SERPENT TEA XTEA 
+
+
+***********MM*********
+组合类型: XOR MM | the delay is: 0.960000 ns
+算法个数: 1 分别是：
+IDEA 
+组合类型: MM | the delay is: 0.900000 ns
+算法个数: 2 分别是：
+IDEA RC6 
+
+
+***********LUT*********
+组合类型: BR XOR XOR LUT | the delay is: 0.710000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: MAS XOR XOR LUT | the delay is: 0.910000 ns
+算法个数: 1 分别是：
+BLOWFISH 
+组合类型: SH XOR LUT | the delay is: 0.851000 ns
+算法个数: 1 分别是：
+SERPENT 
+组合类型: XOR SH LUT | the delay is: 0.851000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: XOR XOR MAS LUT | the delay is: 0.910000 ns
+算法个数: 1 分别是：
+SEED 
+组合类型: XOR XOR SH LUT | the delay is: 0.911000 ns
+算法个数: 1 分别是：
+TWOFISH 
+组合类型: BR | the delay is: 0.070000 ns
+算法个数: 2 分别是：
+AES CAMELLIA 
+组合类型: MAS LUT | the delay is: 0.790000 ns
+算法个数: 2 分别是：
+GOST SEED 
+组合类型: MM | the delay is: 0.900000 ns
+算法个数: 2 分别是：
+IDEA RC6 
+组合类型: SH LUT | the delay is: 0.791000 ns
+算法个数: 2 分别是：
+CAST128 TWOFISH 
+组合类型: XOR MAS LUT | the delay is: 0.850000 ns
+算法个数: 2 分别是：
+GOST SEED 
+组合类型: XOR XOR XOR LUT | the delay is: 0.700000 ns
+算法个数: 3 分别是：
+SEED SM4 SKIPJECT 
+组合类型: XOR XOR LUT | the delay is: 0.640000 ns
+算法个数: 5 分别是：
+BLOWFISH CAMELLIA SEED SM4 SKIPJECT 
+组合类型: XOR LUT | the delay is: 0.580000 ns
+算法个数: 8 分别是：
+AES DES BLOWFISH CAMELLIA SEED SM4 SERPENT SKIPJECT 
+组合类型: SH | the delay is: 0.271000 ns
+算法个数: 9 分别是：
+CAST128 GOST RC5 TWOFISH SM4 RC6 SERPENT TEA XTEA 
+组合类型: LUT | the delay is: 0.520000 ns
+算法个数: 11 分别是：
+AES DES BLOWFISH CAMELLIA CAST128 GOST SEED TWOFISH SM4 SERPENT SKIPJECT 
+
+
+***********GFM*********
+组合类型: BR GFM | the delay is: 0.870000 ns
+算法个数: 1 分别是：
+AES 
+组合类型: BR | the delay is: 0.070000 ns
+算法个数: 2 分别是：
+AES CAMELLIA 
+组合类型: GFM | the delay is: 0.800000 ns
+算法个数: 2 分别是：
+AES TWOFISH 
+组合类型: MM | the delay is: 0.900000 ns
+算法个数: 2 分别是：
+IDEA RC6 
+组合类型: SH | the delay is: 0.271000 ns
+算法个数: 9 分别是：
+CAST128 GOST RC5 TWOFISH SM4 RC6 SERPENT TEA XTEA 
+
+
+***********SUB*********
+组合类型: SUB | the delay is: 0.500000 ns
+算法个数: 1 分别是：
+DES 
+组合类型: XOR SUB | the delay is: 0.560000 ns
+算法个数: 1 分别是：
+DES 
+组合类型: BR | the delay is: 0.070000 ns
+算法个数: 2 分别是：
+AES CAMELLIA 
+组合类型: MM | the delay is: 0.900000 ns
+算法个数: 2 分别是：
+IDEA RC6 
+组合类型: SH | the delay is: 0.271000 ns
+算法个数: 9 分别是：
+CAST128 GOST RC5 TWOFISH SM4 RC6 SERPENT TEA XTEA 
+
+
+***********BR*********
+组合类型: LUT BR | the delay is: 0.590000 ns
+算法个数: 1 分别是：
+AES 
+组合类型: XOR BR | the delay is: 0.130000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: XOR LUT BR | the delay is: 0.650000 ns
+算法个数: 1 分别是：
+AES 
+组合类型: XOR XOR BR | the delay is: 0.190000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: XOR XOR XOR BR | the delay is: 0.250000 ns
+算法个数: 1 分别是：
+CAMELLIA 
+组合类型: BR | the delay is: 0.070000 ns
+算法个数: 2 分别是：
+AES CAMELLIA 
